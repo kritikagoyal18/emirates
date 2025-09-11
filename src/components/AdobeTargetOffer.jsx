@@ -49,7 +49,7 @@ const AdobeTargetOffer = () => {
                         console.log("CTAButtonText:", ctaButtonText);
                         console.log("Short Description (HTML):", shortDescriptionHtml);
 
-                       // document.getElementById("reactapp-mbox").innerHTML = "<img src="+'https://publish-p148716-e1519766.adobeaemcloud.com/'+imagePath+" />";
+                       // document.getElementById("reactapp-mbox").innerHTML = "<img src="+'https://publish-p135360-e1341441.adobeaemcloud.com/'+imagePath+" />";
                         const offerHtml = `
                         <div style="
                             display: flex;
@@ -58,7 +58,7 @@ const AdobeTargetOffer = () => {
                             padding: 20px;">
                             <div style="flex: 1; margin-right: 20px;" class="fl-1">
                                 <img 
-                                    src="https://publish-p148716-e1519766.adobeaemcloud.com${imagePath}"
+                                    src="https://publish-p135360-e1341441.adobeaemcloud.com${imagePath}"
                                     alt="${title}" 
                                     style="width: 100%; border-radius: 8px;"  class="fl-2-img"
                                 />

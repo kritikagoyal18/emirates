@@ -22,7 +22,7 @@ function App() {
             async
           />
            <script
-            src="https://publish-p148716-e1519766.adobeaemcloud.com/content/dam/british-airways/at.js"
+            src="https://publish-p135360-e1341441.adobeaemcloud.com/content/dam/emirates/at.js"
             async
           />
           <meta

@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 import CarouselItem from "../components/CarouselItem";
 
 import CallToActionSection from "../components/CallToActionSection";
-import { useBAPageBySlug } from "../api";
+import { useEmiratesPageBySlug } from "../api";
 import "./Home.scss";
 import "../components/CarouselItem.scss";
 import FlightBookingForm from "../components/FlightBookingForm";
@@ -25,7 +25,7 @@ const Home = () => {
   const { REACT_APP_HOST_URI } = process.env;
 
   //const { data } = usePageBySlug("home", selectedVariation, fetchTrigger);
-  const { data } = useBAPageBySlug("home", selectedVariation, fetchTrigger);
+  const { data } = useEmiratesPageBySlug("home", selectedVariation, fetchTrigger);
 
   /*
   const flightPackages = useMemo(() => {
@@ -151,8 +151,8 @@ const Home = () => {
 
       <SaleOffers />
 
-      <img src="https://publish-p148716-e1519766.adobeaemcloud.com/content/dam/british-airways/banners/home-page-centre.png" alt="centre-image"  style={{ height: 'auto', width: '100%' }}/>
-      <img src="https://publish-p148716-e1519766.adobeaemcloud.com/content/dam/british-airways/banners/home-page-bottom.png" alt="bottom-image"  style={{ height: 'auto', width: '100%' }}/>
+      <img src="https://publish-p135360-e1341441.adobeaemcloud.com/content/dam/emirates/banners/home-page-centre.png" alt="centre-image"  style={{ height: 'auto', width: '100%' }}/>
+      <img src="https://publish-p135360-e1341441.adobeaemcloud.com/content/dam/emirates/banners/home-page-bottom.png" alt="bottom-image"  style={{ height: 'auto', width: '100%' }}/>
 
     </>
   );

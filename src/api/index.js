@@ -5,6 +5,6 @@ export {
   useArticles,
   useServices,
   useFlightPackageById,
-  useBAPageBySlug,
+  useEmiratesPageBySlug,
   useChooseAFare,
 } from "./usePersistedQueries";

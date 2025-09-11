@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import aemHeadlessClient from "./aemHeadlessClient";
 
 const { REACT_APP_ENDPOINT } = process.env;
-const { REACT_APP_BA_ENDPOINT } = process.env;
+const { REACT_APP_EMIRATES_ENDPOINT } = process.env;
 
 /**
  * This file contains the React useEffect custom hooks that:
@@ -276,7 +276,7 @@ export function useFlightPackageById(packageId, variation = "master", fetchTrigg
         };
   
         const response = await fetchPersistedQuery(
-          REACT_APP_BA_ENDPOINT + "/flightpackage-by-id",
+          REACT_APP_EMIRATES_ENDPOINT + "/flightpackage-by-id",
           queryVariables
         );
   
@@ -305,7 +305,7 @@ export function useFlightPackageById(packageId, variation = "master", fetchTrigg
  * @param {String} variation the page variation
  * @returns a JSON object representing the Page
  */
-export function useBAPageBySlug(slug, variation = "master", fetchTrigger) {
+export function useEmiratesPageBySlug(slug, variation = "master", fetchTrigger) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -317,7 +317,7 @@ export function useBAPageBySlug(slug, variation = "master", fetchTrigger) {
       };
 
       const response = await fetchPersistedQuery(
-        REACT_APP_BA_ENDPOINT + "/page-by-slug",
+        REACT_APP_EMIRATES_ENDPOINT + "/page-by-slug",
         queryVariables
       );
 
@@ -346,7 +346,7 @@ export function useChooseAFare(variation = "master", fetchTrigger) {
 
       try {
         const response = await fetchPersistedQuery(
-          REACT_APP_BA_ENDPOINT + "/choose-a-fare",
+          REACT_APP_EMIRATES_ENDPOINT + "/choose-a-fare",
           queryVariables
         );
         
