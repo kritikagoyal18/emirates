@@ -1,0 +1,30 @@
+@import "../styles/variables";
+
+.hero-wrapper {
+  display: flex;
+  align-items: flex-start;
+  padding: 44px 140px 88px 140px;
+  flex-wrap: wrap;
+  height: 100%;
+  background: rgb(1, 18, 44);
+  background: linear-gradient(180deg, rgba(1, 18, 44, 1) 0%, rgba(1, 18, 44, 0) 50%, rgba(1, 18, 44, 1) 100%);
+  gap: initial;
+  max-width: initial !important;
+
+  img {
+    width: 550px;
+    height: 310px;
+
+    margin-top: 92px;
+
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 4px 8px 32px 0px rgba(10, 10, 10, 0.06);
+    backdrop-filter: blur(20px);
+  }
+
+  button {
+    width: 170px;
+    height: 52px;
+  }
+}

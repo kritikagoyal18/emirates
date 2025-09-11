@@ -1,0 +1,116 @@
+
+@import "../styles/fonts";
+@import "../styles/variables";
+
+#parallax-item {
+  position: absolute;
+  top: 650px;
+  height: 500px;
+  left: 57%;
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+  user-select: none;
+  backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  z-index: 1;
+
+  transition: none;
+}
+
+.variations-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 140px 0px;
+}
+
+.carousel {
+  top:-27rem;
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  border: 1px solid #ffffff;
+
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+
+    .carousel-item {
+      min-width: 100%;
+      text-align: center;
+      position: relative;
+
+      .carousel-caption {
+        padding: 25px;
+        box-sizing: border-box;
+
+        h5.color-light {
+          font-size: 40px;
+          font-weight: 400;
+          line-height: 100px;
+          font-family: $font-family-mylius-keyline;
+          text-transform: uppercase;
+        }
+
+        p, div {
+          color:#ffffff;
+        }
+
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      /*.carousel-caption {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+      }*/
+
+      &.active {
+        opacity: 1;
+        transition: opacity 0.5s ease;
+      }
+    }
+  }
+
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.85);
+    color: #000000;
+    border: none;
+    border-radius: 7px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+
+    &.prev {
+      left: 10px;
+    }
+
+    &.next {
+      right: 10px;
+    }
+
+    &:hover {
+      //background: #000;
+    }
+  }
+}

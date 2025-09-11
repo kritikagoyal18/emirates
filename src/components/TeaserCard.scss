@@ -1,0 +1,40 @@
+.teaser-card {
+  display: flex;
+  width: 1187px;
+  height: 164px;
+  background-color: #f9f9f9; /* Background color for better visibility */
+  border: 1px solid #ddd; /* Optional border for styling */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.teaser-image {
+  width: 297px;
+  height: 164px;
+  object-fit: cover; /* Ensures the image fits within the box */
+  flex-shrink: 0; /* Prevents the image from shrinking */
+  border-radius: 0; /* Ensures sharp corners */
+}
+
+.content-wrapper {
+  flex: 1; /* Takes up the remaining space */
+  padding: 16px; /* Padding around the content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.teaser-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 8px 0; /* Margin below the title */
+  color: #333; /* Dark text color */
+}
+
+.teaser-description {
+  font-size: 16px;
+  color: #666; /* Lighter text color for description */
+  line-height: 1.4; /* Improves readability */
+  margin: 0; /* No extra margin */
+}

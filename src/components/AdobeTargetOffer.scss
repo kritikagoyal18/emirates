@@ -1,0 +1,56 @@
+@import "../styles/variables";
+
+#reactapp-mbox {
+  width: 100%;
+  margin: 20px 0;
+  background-color: #4e2267;
+  color: #ffffff; 
+  
+
+  * {
+    color: #ffffff;
+  }
+
+
+  .fl-1 {
+    display: inline-block;
+    img {
+        width: 100%;
+    }
+  }
+
+  .fl-2 {
+
+    .fl-2-pretitle {
+        font-size: 15px;
+    }
+
+    .fl-2-heading {
+        font-size: 24px;
+    }
+
+    .fl-2-desc {
+        font-size: 16px;
+    }
+
+    .fl-2-sdesc {
+        font-size: 16px;
+    }
+    
+    .fl-2-btn {
+        text-transform: uppercase;
+        background-color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        color: #01122c;
+        cursor: pointer;
+        display: block;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 10px;
+        transition: background-color .3s ease;
+    }
+
+  }
+  
+}

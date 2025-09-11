@@ -1,0 +1,108 @@
+@import "../styles/fonts";
+@import "../styles/variables";
+
+.so-block {
+  background-color: #f5f5f5;
+}
+
+.so-wrapper {
+  display: block;
+  padding: 100px 140px;
+  margin-top: 0;
+  width: 100%;
+  color: #021b41;
+
+  .so-header {
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    .so-header-text {
+      font-size: 20px;
+      font-weight: 400;
+      color: #021b41;
+    }
+    .so-header-title {
+      font-size: 70px;
+      font-weight: 400;
+      color: #021b41;
+      font-family: $font-family-mylius-keyline;
+    }
+    
+  }
+
+
+  .so-tiles {
+    display: block;
+    width: 100%;
+  
+
+    .so-tile {
+      display: inline-block;
+      width: 25%;
+      padding: 15px;
+      box-sizing: border-box;
+      vertical-align: text-top;
+
+      .so-tile-wrapper {
+        background-color: #ffffff;
+        border: 1px solid #e7e8ec;
+        border-radius: 8px;
+        box-shadow: 4px 8px 32px 0px rgba(10, 10, 10, 0.06);
+        backdrop-filter: blur(20px);
+
+        .so-img-content {
+          display: block;
+          width: 100%;
+
+          .so-img {
+            color: transparent;
+            object-fit: cover;
+            height: 182px;
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+            border: none;
+          }
+        }
+        
+        .so-text-content {
+          display: block;
+          width: 100%;
+          min-height:225px;
+          padding:20px;
+          position: relative;
+          box-sizing: border-box;
+          
+
+          .so-title {
+            font-size: 20px;
+            font-weight: 400;
+            color: #021b41;
+            margin-bottom: 30px;
+          }
+          .so-from {
+            font-size: 16px;
+            font-weight: 400;
+            color: #021b41;
+          }
+          .so-price {
+            font-size: 24px;
+            font-weight: 400;
+            color: #021b41;
+          }
+          .so-text {
+            font-size: 14px;
+            font-weight: 400;
+            color: #021b41;
+            position: absolute;
+            bottom: 20px;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}

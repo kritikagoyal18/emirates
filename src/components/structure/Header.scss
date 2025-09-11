@@ -1,0 +1,42 @@
+@import "../../styles/variables";
+
+header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border:none;
+  background-color: #01122c;
+  z-index: 11;
+
+  .header {
+    height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+  }
+
+  .navigations-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 175px;
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+    }
+  }
+
+  .buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    button {
+      height: 40px;
+      padding: 12px 40px;
+      border-radius: 10px;
+    }
+  }
+}
