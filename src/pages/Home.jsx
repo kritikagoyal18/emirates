@@ -24,7 +24,6 @@ const Home = () => {
 
   const { REACT_APP_HOST_URI } = process.env;
 
-  //const { data } = usePageBySlug("home", selectedVariation, fetchTrigger);
   const { data } = useEmiratesPageBySlug("home", selectedVariation, fetchTrigger);
 
   /*
@@ -114,7 +113,7 @@ const Home = () => {
     <>
       <ContentFragment cf={data}>
         <Hero image={image} title={title} content={content} />
-        <div className="carousel">
+        {/* <div className="carousel">
           <div
             className="carousel-inner"
             style={{
@@ -136,13 +135,9 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <button className="carousel-control prev" onClick={handlePrev}>
-            ❮
-          </button>
-          <button className="carousel-control next" onClick={handleNext}>
-            ❯
-          </button>
-        </div>
+          <button className="carousel-control prev" onClick={handlePrev}>❮</button>
+          <button className="carousel-control next" onClick={handleNext}>❯</button>
+        </div> */}
         <FlightBookingForm />
       </ContentFragment>
       <AdobeTargetOffer/>
