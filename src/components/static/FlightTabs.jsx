@@ -22,7 +22,7 @@ const FlightTabs = ({ children }) => {
                                             Tuesday, January 28, 2025, at 08:20 from Heathrow, London airport London.
                                             Arrives on Tuesday, January 28, 2025, at 11:25 to John F Kennedy, New York
                                             airport New York. Duration of the flight 8 hours and 5 minutes with 0 stops.
-                                            Price per passenger from £2,121. Operated by British Airways. 3 cabins are
+                                            Price per passenger from £2,121. Operated by Emirates. 3 cabins are
                                             available.</p>
                                         <div
                                             className="text-secondary-blue flex flex-row justify-between font-open-sans text-xs font-light">
@@ -380,7 +380,7 @@ const FlightTabs = ({ children }) => {
                                                             <div className="w-full">
                                                                 <div className=" text-secondary-blue ml-[-8px]">
                                                                     <div className="flex gap-4"
-                                                                         aria-label="Operated by British Airways, flight number BA 1 1 7, BOEING 7 7 7-3 0 0ER."
+                                                                         aria-label="Operated by Emirates, flight number BA 1 1 7, BOEING 7 7 7-3 0 0ER."
                                                                          aria-labelledby="flight-details" tabIndex="0">
                                                                         <div className="flex">
                                                                             <div
@@ -791,7 +791,7 @@ const FlightTabs = ({ children }) => {
                                             Tuesday, January 28, 2025, at 09:35 from Heathrow, London airport London.
                                             Arrives on Tuesday, January 28, 2025, at 12:40 to John F Kennedy, New York
                                             airport New York. Duration of the flight 8 hours and 5 minutes with 0 stops.
-                                            Price per passenger from £2,121. Operated by British Airways. 3 cabins are
+                                            Price per passenger from £2,121. Operated by Emirates. 3 cabins are
                                             available.</p>
                                         <div
                                             className="text-secondary-blue flex flex-row justify-between font-open-sans text-xs font-light">
@@ -1144,7 +1144,7 @@ const FlightTabs = ({ children }) => {
                                                             <div className="w-full">
                                                                 <div className=" text-secondary-blue ml-[-8px]">
                                                                     <div className="flex gap-4"
-                                                                         aria-label="Operated by British Airways, flight number BA 1 7 5, BOEING 7 7 7-3 0 0ER."
+                                                                         aria-label="Operated by Emirates, flight number BA 1 7 5, BOEING 7 7 7-3 0 0ER."
                                                                          aria-labelledby="flight-details" tabIndex="0">
                                                                         <div className="flex">
                                                                             <div
@@ -1183,7 +1183,7 @@ const FlightTabs = ({ children }) => {
                                             International,
                                             New York airport New York. Duration of the flight 8 hours and 10 minutes
                                             with 0
-                                            stops. Price per passenger from £2,121. Operated by British Airways. 3
+                                            stops. Price per passenger from £2,121. Operated by Emirates. 3
                                             cabins
                                             are available.</p>
                                         <div
@@ -1538,7 +1538,7 @@ const FlightTabs = ({ children }) => {
                                                             <div className="w-full">
                                                                 <div className=" text-secondary-blue ml-[-8px]">
                                                                     <div className="flex gap-4"
-                                                                         aria-label="Operated by British Airways, flight number BA 1 8 5, BOEING 7 7 7-2 0 0/3 0 0."
+                                                                         aria-label="Operated by Emirates, flight number BA 1 8 5, BOEING 7 7 7-2 0 0/3 0 0."
                                                                          aria-labelledby="flight-details" tabIndex="0">
                                                                         <div className="flex">
                                                                             <div
@@ -1575,7 +1575,7 @@ const FlightTabs = ({ children }) => {
                                             Tuesday, January 28, 2025, at 11:20 from Heathrow, London airport London.
                                             Arrives on Tuesday, January 28, 2025, at 14:20 to John F Kennedy, New York
                                             airport New York. Duration of the flight 8 hours and 0 minutes with 0 stops.
-                                            Price per passenger from £2,121. Operated by British Airways. 3 cabins are
+                                            Price per passenger from £2,121. Operated by Emirates. 3 cabins are
                                             available.</p>
                                         <div
                                             className="text-secondary-blue flex flex-row justify-between font-open-sans text-xs font-light">
@@ -1928,7 +1928,7 @@ const FlightTabs = ({ children }) => {
                                                             <div className="w-full">
                                                                 <div className=" text-secondary-blue ml-[-8px]">
                                                                     <div className="flex gap-4"
-                                                                         aria-label="Operated by British Airways, flight number BA 1 7 3, BOEING 7 7 7-3 0 0ER."
+                                                                         aria-label="Operated by Emirates, flight number BA 1 7 3, BOEING 7 7 7-3 0 0ER."
                                                                          aria-labelledby="flight-details" tabIndex="0">
                                                                         <div className="flex">
                                                                             <div

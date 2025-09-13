@@ -136,19 +136,16 @@ const Home = () => {
               </div>
             ))}
           </div>
-
-        {/* Navigation Buttons */}
-        <button className="carousel-control prev" onClick={handlePrev}>
-          ❮
-        </button>
-        <button className="carousel-control next" onClick={handleNext}>
-          ❯
-        </button>
-      </div>
-      <FlightBookingForm />
+          <button className="carousel-control prev" onClick={handlePrev}>
+            ❮
+          </button>
+          <button className="carousel-control next" onClick={handleNext}>
+            ❯
+          </button>
+        </div>
+        <FlightBookingForm />
       </ContentFragment>
       <AdobeTargetOffer/>
-
       <SaleOffers />
 
       <img src="https://publish-p135360-e1341441.adobeaemcloud.com/content/dam/emirates/banners/home-page-centre.png" alt="centre-image"  style={{ height: 'auto', width: '100%' }}/>

@@ -1,8 +1,8 @@
 import React from "react";
-import SO1 from "../assets/sale-offer-1.jpg"
-import SO2 from "../assets/sale-offer-2.jpg"
-import SO3 from "../assets/sale-offer-3.jpg"
-import SO4 from "../assets/sale-offer-4.jpg"
+import SO1 from "../assets/barcelona.jpg"
+import SO2 from "../assets/dubai.jpg"
+import SO3 from "../assets/rome.jpg"
+import SO4 from "../assets/london.jpg"
 import "./SaleOffers.scss";
 
 const SaleOffers = ({}) => {
@@ -11,7 +11,7 @@ const SaleOffers = ({}) => {
       <div className="so-wrapper">
 
           <div className="so-header">
-            <div className="so-header-text">Take your pick from our best</div>
+            <div className="so-header-text">Featured destinations from across the world</div>
             <div className="so-header-title">SALE OFFERS</div>
           </div>
 
@@ -20,13 +20,13 @@ const SaleOffers = ({}) => {
             <div className="so-tile">
               <div className="so-tile-wrapper">
                 <div className="so-img-content">
-                  <img src={SO1} alt="British Airways" className="so-img" />
+                  <img src={SO1} alt="Emirates" className="so-img" />
                 </div>
                 <div className="so-text-content">
-                  <div className="so-title">Miami flights</div>
+                  <div className="so-title">Barcelona flights</div>
                   <div className="so-from">From</div>
                   <div className="so-price">£434</div>
-                  <div className="so-text">Return from London, Mar 2025</div>
+                  <div className="so-text">Discover for yourself</div>
                 </div>
               </div>
             </div>
@@ -34,13 +34,13 @@ const SaleOffers = ({}) => {
             <div className="so-tile">
               <div className="so-tile-wrapper">
                 <div className="so-img-content">
-                  <img src={SO2} alt="British Airways" className="so-img" />
+                  <img src={SO2} alt="Emirates" className="so-img" />
                 </div>
                 <div className="so-text-content">
-                  <div className="so-title">Flights to St Lucia</div>
+                  <div className="so-title">Dubai flights</div>
                   <div className="so-from">From</div>
                   <div className="so-price">£441</div>
-                  <div className="so-text">Return from London, Mar 2025</div>
+                  <div className="so-text">Discover for yourself</div>
                 </div>
               </div>
             </div>
@@ -48,13 +48,13 @@ const SaleOffers = ({}) => {
             <div className="so-tile">
               <div className="so-tile-wrapper">
                 <div className="so-img-content">
-                  <img src={SO3} alt="British Airways" className="so-img" />
+                  <img src={SO3} alt="Emirates" className="so-img" />
                 </div>
                 <div className="so-text-content">
-                  <div className="so-title">Barbados. flights + 7 nights</div>
+                  <div className="so-title">Rome flights</div>
                   <div className="so-from">From</div>
                   <div className="so-price">£739</div>
-                  <div className="so-text">Per person from London, Sep 2025</div>
+                  <div className="so-text">Discover for yourself</div>
                 </div>
               </div>
             </div>
@@ -62,13 +62,13 @@ const SaleOffers = ({}) => {
             <div className="so-tile">
               <div className="so-tile-wrapper">
                 <div className="so-img-content">
-                  <img src={SO4} alt="British Airways" className="so-img" />
+                  <img src={SO4} alt="Emirates" className="so-img" />
                 </div>
                 <div className="so-text-content">
-                  <div className="so-title">New York flights + 3 nights</div>
+                  <div className="so-title">London flights</div>
                   <div className="so-from">From</div>
                   <div className="so-price">£599</div>
-                  <div className="so-text">Per person from London, Feb 2025</div>
+                  <div className="so-text">Discover for yourself</div>
                 </div>
               </div>
             </div>
