@@ -24,7 +24,7 @@ const Home = () => {
 
   const { REACT_APP_HOST_URI } = process.env;
 
-  const { data } = useEmiratesPageBySlug("home", selectedVariation, fetchTrigger);
+  const { data } = useEmiratesPageBySlug("premium-economy-banner", selectedVariation, fetchTrigger);
 
   /*
   const flightPackages = useMemo(() => {

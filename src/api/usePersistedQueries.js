@@ -317,7 +317,7 @@ export function useEmiratesPageBySlug(slug, variation = "master", fetchTrigger) 
       };
 
       const response = await fetchPersistedQuery(
-        REACT_APP_EMIRATES_ENDPOINT + "/page-by-slug",
+        REACT_APP_EMIRATES_ENDPOINT + "/getHomePageBannerBySlug",
         queryVariables
       );
 
