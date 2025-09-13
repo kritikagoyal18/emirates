@@ -315,7 +315,7 @@ export function useEmiratesPageBySlug(slug, variation = "master", fetchTrigger) 
       //   slug,
       //   variation,
       // };
-      const path = "/content/dam/ra-emirates/content-fragments/premium-economy-banner";
+      const path = "/content/dam/ra-emirates/content-fragments/en/premium-economy-banner";
 
       const queryVariables = {
         path
