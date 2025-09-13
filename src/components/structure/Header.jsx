@@ -5,10 +5,12 @@ import "./Header.scss";
 
 const Header = () => {
   const navigations = [
-    { label: "Discover", href: "/services" },
-    { label: "Book", href: "/articles" },
-    { label: "Manage", href: "/flightlist" },
-    { label: "Help", href: "/articles" }
+    { label: "Book", href: "/services" },
+    { label: "Manage", href: "/articles" },
+    { label: "Experience", href: "/flightlist" },
+    { label: "Where We Fly", href: "/articles" },
+    { label: "Loyalty", href: "/flightlist" },
+    { label: "Help", href: "/flightlist" }
   ];
 
   return (
@@ -26,13 +28,12 @@ const Header = () => {
               </a>
             ))}
           </nav>
-          <Logo variant="british" />
+          <Logo variant="emirates" />
         </div>
         <div className="buttons-wrapper">
           <RedirectButton className="transparent font-size-medium hover-effect">
-            Login
+            LOG IN
           </RedirectButton>
-          <Logo variant="oneWorldLogo"/>
         </div>
       </div>
     </header>
