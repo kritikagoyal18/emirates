@@ -311,15 +311,10 @@ export function useEmiratesPageBySlug(slug, variation = "master", fetchTrigger) 
 
   useEffect(() => {
     async function fetchData() {
-      // const queryVariables = {
-      //   slug,
-      //   variation,
-      // };
+      // Deprecated: hardcoded path. Prefer useHeroByPath with Page Config.
       const path = "/content/dam/ra-emirates/content-fragments/premium-economy-banner";
 
-      const queryVariables = {
-        path
-      };
+      const queryVariables = { path };
 
       const response = await fetchPersistedQuery(
         REACT_APP_EMIRATES_ENDPOINT + "/getHomePageBannerBySlug",
@@ -343,6 +338,78 @@ export function useEmiratesPageBySlug(slug, variation = "master", fetchTrigger) 
 
     fetchData();
   }, [slug, variation, fetchTrigger]);
+
+  return { data, error };
+}
+
+/**
+ * Page Config: Returns configuration for a page by slug, including CF paths
+ * such as heroPath and heroVariation. Authors edit this in Universal Editor.
+ */
+export function usePageConfig(slug, variation = "master", fetchTrigger) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      const queryVariables = { slug, variation };
+
+      const response = await fetchPersistedQuery(
+        REACT_APP_EMIRATES_ENDPOINT + "/page-config-by-slug",
+        queryVariables
+      );
+
+      if (response?.err) {
+        setError(response.err);
+      } else if (response?.data?.pageConfigList?.items?.length === 1) {
+        setData(response.data.pageConfigList.items[0]);
+      }
+    }
+
+    fetchData();
+  }, [slug, variation, fetchTrigger]);
+
+  return { data, error };
+}
+
+/**
+ * Generic Hero fetcher by CF path and variation. Use with Page Config.
+ */
+export function useHeroByPath(path, variation = "master", fetchTrigger) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      if (!path) {
+        setData(null);
+        return;
+      }
+
+      const queryVariables = { path };
+
+      const response = await fetchPersistedQuery(
+        REACT_APP_EMIRATES_ENDPOINT + "/getHomePageBannerBySlug",
+        queryVariables
+      );
+
+      if (response?.err) {
+        setError(response.err);
+      } else if (response?.data?.emiratesBannerByPath?.item) {
+        const item = response.data.emiratesBannerByPath.item;
+        const enrichedItem = {
+          ...item,
+          _path: item?._path || path,
+          _variation: item?._variation || variation,
+        };
+        setData(enrichedItem);
+      } else {
+        setData(null);
+      }
+    }
+
+    fetchData();
+  }, [path, variation, fetchTrigger]);
 
   return { data, error };
 }

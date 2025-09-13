@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 import CarouselItem from "../components/CarouselItem";
 
 import CallToActionSection from "../components/CallToActionSection";
-import { useEmiratesPageBySlug } from "../api";
+import { usePageConfig, useHeroByPath } from "../api";
 import "./Home.scss";
 import "../components/CarouselItem.scss";
 import FlightBookingForm from "../components/FlightBookingForm";
@@ -22,9 +22,16 @@ const Home = () => {
     [searchParams]
   );
 
-  const { REACT_APP_HOST_URI } = process.env;
+  const { data: pageConfig } = usePageConfig("home", selectedVariation, fetchTrigger);
 
-  const { data } = useEmiratesPageBySlug("premium-economy-banner", selectedVariation, fetchTrigger);
+  const defaultHeroPath = "/content/dam/ra-emirates/content-fragments/premium-economy-banner";
+  const urlCfPath = useMemo(() => searchParams.get("cfPath") || null, [searchParams]);
+  const urlVariation = useMemo(() => searchParams.get("variation") || null, [searchParams]);
+
+  const heroPath = urlCfPath || pageConfig?.heroPath || defaultHeroPath;
+  const heroVariation = urlVariation || pageConfig?.heroVariation || selectedVariation;
+
+  const { data: hero } = useHeroByPath(heroPath, heroVariation, fetchTrigger);
 
   /*
   const flightPackages = useMemo(() => {
@@ -92,12 +99,12 @@ const Home = () => {
 */
 
   //const image = REACT_APP_HOST_URI + data?.image?._path;
-  const pretitle = data?.pretitle;
-  const title = data?.title;
-  const description = data?.description;
-  const buttonLabel = data?.buttonLabel;
-  const buttonLink = data?.buttonLink;
-  const image = data?.image._authorUrl;
+  const pretitle = hero?.pretitle;
+  const title = hero?.title;
+  const description = hero?.description;
+  const buttonLabel = hero?.buttonLabel;
+  const buttonLink = hero?.buttonLink;
+  const image = hero?.image?._authorUrl || hero?.image?._publishUrl;
   //const slug = data?.slug;
   //const content = data?.content;
   //const offers = data?.offers;
@@ -116,7 +123,20 @@ const Home = () => {
 
   return (
     <>
-      <ContentFragment cf={data}>
+      {pageConfig && (
+        <ContentFragment cf={pageConfig} tag="div" className="container" label="Hero Settings" behavior="component">
+          <div data-aue-prop="heroPath" data-aue-type="reference" data-aue-label="Hero Fragment"
+               style={{ display: "inline-block", padding: "4px 8px", background: "rgba(0,0,0,0.2)", color: "#fff", borderRadius: "4px", marginBottom: "8px", cursor: "pointer" }}>
+            Hero Settings
+          </div>
+          <div data-aue-prop="heroVariation" data-aue-type="text" data-aue-label="Hero Variation"
+               style={{ display: "inline-block", marginLeft: "8px", color: "#fff" }}>
+            Variation
+          </div>
+        </ContentFragment>
+      )}
+
+      <ContentFragment cf={hero}>
         <Hero image={image} title={title} pretitle={pretitle} description={description} buttonLabel={buttonLabel} buttonLink={buttonLink} />
         
         {/* <div className="carousel">
