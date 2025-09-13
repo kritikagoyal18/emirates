@@ -378,3 +378,37 @@ export function useChooseAFare(variation = "master", fetchTrigger) {
 
   return { data, error };
 }
+
+/**
+ * Calls the 'getCabinDetails' persisted query.
+ * Returns a list of cabin feature items that each include `_path` and `_variation`.
+ */
+export function useCabinDetails(variation = "master", fetchTrigger) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      const queryVariables = { variation };
+
+      try {
+        const response = await fetchPersistedQuery(
+          REACT_APP_EMIRATES_ENDPOINT + "/getCabinDetails",
+          queryVariables
+        );
+
+        if (response?.err) {
+          setError(response.err);
+        } else if (response?.data?.emiratesCabinFeaturesList?.items) {
+          setData(response.data.emiratesCabinFeaturesList.items);
+        }
+      } catch (e) {
+        setError(e.message);
+      }
+    }
+
+    fetchData();
+  }, [variation, fetchTrigger]);
+
+  return { data, error };
+}

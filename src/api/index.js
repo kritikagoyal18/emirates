@@ -7,4 +7,5 @@ export {
   useFlightPackageById,
   useEmiratesPageBySlug,
   useChooseAFare,
+  useCabinDetails,
 } from "./usePersistedQueries";
