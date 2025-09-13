@@ -328,8 +328,10 @@ export function useEmiratesPageBySlug(slug, variation = "master", fetchTrigger) 
 
       if (response?.err) {
         setError(response.err);
-      } else if (response?.data?.homePageList?.items?.length === 1) {
-        setData(response.data.homePageList.items[0]);
+      } else if (response?.data?.emiratesBannerByPath?.item) {
+        setData(response.data.emiratesBannerByPath.item);
+      } else {
+        setData(null);
       }
     }
 
