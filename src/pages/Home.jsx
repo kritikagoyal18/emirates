@@ -116,8 +116,9 @@ const Home = () => {
 
   return (
     <>
+      <Hero image={image} title={title} pretitle={pretitle} description={description} buttonLabel={buttonLabel} buttonLink={buttonLink} />
       <ContentFragment cf={data}>
-        <Hero image={image} title={title} pretitle={pretitle} description={description} buttonLabel={buttonLabel} buttonLink={buttonLink} />
+        
         {/* <div className="carousel">
           <div
             className="carousel-inner"
