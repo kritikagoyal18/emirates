@@ -4,7 +4,7 @@ import Text from "./base/Text";
 import RedirectButton from "./RedirectButton";
 import "./Hero.scss";
 
-const Hero = ({ image, title, content }) => {
+const Hero = ({ image, title, pretitle, description, buttonLabel, buttonLink }) => {
   return (
     <div className="background-blue" style={{
       backgroundImage: `url(${image})`,
@@ -17,13 +17,14 @@ const Hero = ({ image, title, content }) => {
       <div className="container hero-wrapper">
         <div className="content-button-wrapper">
           <div className="content-wrapper">
+            <Text content={pretitle} prop="pretitle" className="color-grey" />
             <Title heading="h1" prop="title" className="color-light">
               {title}
             </Title>
-            <Text content={content} prop="content" className="color-grey" />
+            <Text content={description} prop="description" className="color-grey" />
           </div>
-          <RedirectButton href="/services" className="hover-effect">
-            Our Services
+          <RedirectButton href={buttonLink} className="hover-effect">
+            {buttonLabel}
           </RedirectButton>
         </div>
       </div>

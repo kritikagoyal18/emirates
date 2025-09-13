@@ -91,28 +91,33 @@ const Home = () => {
   const featuredServices = data?.featuredServices;
 */
 
-  const image = REACT_APP_HOST_URI + data?.image?._path;
+  //const image = REACT_APP_HOST_URI + data?.image?._path;
+  const pretitle = data?.pretitle;
   const title = data?.title;
-  const slug = data?.slug;
-  const content = data?.content;
-  const offers = data?.offers;
+  const description = data?.description;
+  const buttonLabel = data?.buttonLabel;
+  const buttonLink = data?.buttonLink;
+  const image = data?.image._publishUrl;
+  //const slug = data?.slug;
+  //const content = data?.content;
+  //const offers = data?.offers;
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % offers.length);
-  };
+  // const handleNext = () => {
+  //   setCurrentIndex((prevIndex) => (prevIndex + 1) % offers.length);
+  // };
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? offers.length - 1 : prevIndex - 1
-    );
-  };
+  // const handlePrev = () => {
+  //   setCurrentIndex((prevIndex) =>
+  //     prevIndex === 0 ? offers.length - 1 : prevIndex - 1
+  //   );
+  // };
 
   return (
     <>
       <ContentFragment cf={data}>
-        <Hero image={image} title={title} content={content} />
+        <Hero image={image} title={title} pretitle={pretitle} description={description} buttonLabel={buttonLabel} buttonLink={buttonLink} />
         {/* <div className="carousel">
           <div
             className="carousel-inner"

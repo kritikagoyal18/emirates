@@ -311,9 +311,14 @@ export function useEmiratesPageBySlug(slug, variation = "master", fetchTrigger) 
 
   useEffect(() => {
     async function fetchData() {
+      // const queryVariables = {
+      //   slug,
+      //   variation,
+      // };
+      const path = "/content/dam/ra-emirates/content-fragments/premium-economy-banner";
+
       const queryVariables = {
-        slug,
-        variation,
+        path
       };
 
       const response = await fetchPersistedQuery(
