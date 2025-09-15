@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { getLangCode, setLangCode } from "../../utils";
 import Logo from "../Logo";
 import RedirectButton from "../RedirectButton";
@@ -16,10 +16,19 @@ const Header = () => {
     { label: "Help", href: "/flightlist" }
   ];
 
+  const isFirstRunRef = useRef(true);
+
   useEffect(() => {
     window.langCode = langCode;
     setLangCode(langCode);
     console.log("langCode:", langCode);
+    if (isFirstRunRef.current) {
+      isFirstRunRef.current = false;
+      return;
+    }
+    if (typeof window !== "undefined") {
+      window.location.reload();
+    }
   }, [langCode]);
 
   return (
