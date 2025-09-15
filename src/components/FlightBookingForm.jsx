@@ -3,7 +3,10 @@ import { useNavigate } from "react-router-dom";
 import "./FlightBookingForm.scss";
 
 const FlightBookingForm = () => {
-  const [tripType, setTripType] = useState("one-way");
+  const [activeMainTab, setActiveMainTab] = useState("search");
+  const [activeSubTab, setActiveSubTab] = useState("flight");
+  const [fromAirport, setFromAirport] = useState("");
+  const [toAirport, setToAirport] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = useCallback((e) => {
@@ -13,74 +16,68 @@ const FlightBookingForm = () => {
 
   return (
     <div className="flight-booking-form">
-      <form onSubmit={handleSubmit}>
-        <div className="form-group-row">
-          <div className="form-group">
-            <label htmlFor="tripType">Fare</label>
-            <select
-              id="tripType"
-              value={tripType}
-              onChange={(e) => setTripType(e.target.value)}
-            >
-              <option value="one-way">One Way</option>
-              <option value="return">Return Trip</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label htmlFor="from">From</label>
-            <input
-              type="text"
-              id="from"
-              placeholder="Enter departure station"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="to">To</label>
-            <input
-              type="text"
-              id="to"
-              placeholder="Enter arrival station"
-              required
-            />
-          </div>
+      <div className="booking-card">
+        <div className="main-tabs">
+          <button type="button" className={`tab ${activeMainTab === "search" ? "active" : ""}`} onClick={() => setActiveMainTab("search")}>
+            <span className="icon">✈️</span>
+            <span>Search flights</span>
+          </button>
+          <button type="button" className={`tab ${activeMainTab === "manage" ? "active" : ""}`} onClick={() => setActiveMainTab("manage")}>
+            <span className="icon">🏷️</span>
+            <span>Manage booking / Check in</span>
+          </button>
+          <button type="button" className={`tab ${activeMainTab === "whats" ? "active" : ""}`} onClick={() => setActiveMainTab("whats")}>
+            <span className="icon">✈︎</span>
+            <span>What's on your flight</span>
+          </button>
+          <button type="button" className={`tab ${activeMainTab === "status" ? "active" : ""}`} onClick={() => setActiveMainTab("status")}>
+            <span className="icon">⏺</span>
+            <span>Flight status</span>
+          </button>
         </div>
 
-        <div className="form-group-row">
-          <div className="form-group">
-            <label htmlFor="departureDate">Depart</label>
-            <input type="date" id="departureDate" required />
-          </div>
-
-            <div className="form-group">
-              <label htmlFor="returnDate">Return</label>
-              <input type="date" id="returnDate" required />
+        {activeMainTab === "search" && (
+          <form onSubmit={handleSubmit} className="search-form">
+            <div className="sub-tabs">
+              <button type="button" className={`sub-tab ${activeSubTab === "flight" ? "active" : ""}`} onClick={() => setActiveSubTab("flight")}>Flight</button>
+              <button type="button" className={`sub-tab ${activeSubTab === "flight-hotel" ? "active" : ""}`} onClick={() => setActiveSubTab("flight-hotel")}>Flight + hotel</button>
             </div>
 
-          <div className="form-group">
-            <label htmlFor="travelClass">Travel Class</label>
-            <select id="travelClass">
-              <option value="economy">Economy</option>
-              <option value="business">Business</option>
-              <option value="first-class">First Class</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label htmlFor="passengers">Select Passengers</label>
-            <input
-              type="number"
-              id="passengers"
-              min="1"
-              placeholder="No. of passengers"
-              required
-            />
-          </div>
-        </div>
+            <div className="fields">
+              <div className="field">
+                <label htmlFor="from">Departure airport</label>
+                <input
+                  id="from"
+                  type="text"
+                  placeholder="New Delhi (DEL)"
+                  value={fromAirport}
+                  onChange={(e) => setFromAirport(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="field">
+                <label htmlFor="to">Arrival airport</label>
+                <input
+                  id="to"
+                  type="text"
+                  placeholder="Arrival airport"
+                  value={toAirport}
+                  onChange={(e) => setToAirport(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="submit">
+                <button type="submit" className="continue-button">Continue</button>
+              </div>
+            </div>
 
-        <button type="submit" className="find-flights-button">
-          Find Flights
-        </button>
-      </form>
+            <div className="advanced">
+              <a href="#" onClick={(e) => e.preventDefault()}>Advanced search: multi-city, promo codes, partner airlines</a>
+              <span className="chevron">›</span>
+            </div>
+          </form>
+        )}
+      </div>
     </div>
   );
 };
