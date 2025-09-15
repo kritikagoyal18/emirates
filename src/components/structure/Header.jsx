@@ -7,7 +7,7 @@ const Header = () => {
   const navigations = [
     { label: "Book", href: "/services" },
     { label: "Manage", href: "/articles" },
-    { label: "Experience", href: "/flightlist" },
+    { label: "Experience", href: "/experience" },
     { label: "Where We Fly", href: "/articles" },
     { label: "Loyalty", href: "/flightlist" },
     { label: "Help", href: "/flightlist" }

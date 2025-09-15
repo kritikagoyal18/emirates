@@ -347,6 +347,55 @@ export function useEmiratesPageBySlug(slug, variation = "master", fetchTrigger) 
   return { data, error };
 }
 
+/**
+ * Calls the 'page-by-slug' persisted query with `slug` and `variation` parameter.
+ *
+ * @param {String!} slug the page slug
+ * @param {String} variation the page variation
+ * @returns a JSON object representing the Page
+ */
+export function useEmiratesExperienceBanner(slug, variation = "master", fetchTrigger) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      // const queryVariables = {
+      //   slug,
+      //   variation,
+      // };
+      const path = "/content/dam/ra-emirates/content-fragments/en/experience-banner";
+
+      const queryVariables = {
+        path
+      };
+
+      const response = await fetchPersistedQuery(
+        REACT_APP_EMIRATES_ENDPOINT + "/getHomePageBannerBySlug",
+        queryVariables
+      );
+
+      if (response?.err) {
+        setError(response.err);
+      } else if (response?.data?.emiratesBannerByPath?.item) {
+        const item = response.data.emiratesBannerByPath.item;
+        const enrichedItem = {
+          ...item,
+          _path: item?._path || path,
+          _variation: item?._variation || variation,
+        };
+        setData(enrichedItem);
+      } else {
+        setData(null);
+      }
+    }
+
+    fetchData();
+  }, [slug, variation, fetchTrigger]);
+
+  return { data, error };
+}
+
 export function useChooseAFare(variation = "master", fetchTrigger) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);

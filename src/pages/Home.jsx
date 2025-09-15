@@ -99,7 +99,7 @@ const Home = () => {
   const description = data?.description;
   const buttonLabel = data?.buttonLabel;
   const buttonLink = data?.buttonLink;
-  const image = data?.image._authorUrl;
+  const image = data?.image?._authorUrl;
   //const slug = data?.slug;
   //const content = data?.content;
   //const offers = data?.offers;
@@ -119,7 +119,7 @@ const Home = () => {
   return (
     <>
       <ContentFragment cf={data}>
-        <Hero image={image} title={title} pretitle={pretitle} description={description} buttonLabel={buttonLabel} buttonLink={buttonLink} />
+        <Hero image={image} title={title} pretitle={pretitle} description={description} {...(buttonLabel ? { buttonLabel } : {})} {...(buttonLink ? { buttonLink } : {})} />
         
         {/* <div className="carousel">
           <div

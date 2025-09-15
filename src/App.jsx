@@ -35,11 +35,7 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/articles" element={<Articles />} />
-              <Route path="/articles/:slug" element={<ArticleDetail />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/services/:slug" element={<Services />} />
-              <Route path="/flightlist" element={<FlightList />} />
+              <Route path="/experience" element={<Experience />} />
               <Route path="/home" element={<Home />} />
               <Route path="/*" element={<NotFound />} />
             </Routes>

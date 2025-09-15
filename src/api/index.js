@@ -6,6 +6,7 @@ export {
   useServices,
   useFlightPackageById,
   useEmiratesPageBySlug,
+  useEmiratesExperienceBanner,
   useChooseAFare,
   useCabinDetails,
 } from "./usePersistedQueries";
