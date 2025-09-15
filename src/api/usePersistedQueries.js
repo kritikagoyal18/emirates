@@ -8,8 +8,10 @@ it.
 */
 
 import { useEffect, useState } from "react";
-
+import { getLangCode } from "../utils";
 import aemHeadlessClient from "./aemHeadlessClient";
+
+const [langCode, setLangCodeState] = useState(getLangCode());
 
 const { REACT_APP_ENDPOINT } = process.env;
 const { REACT_APP_EMIRATES_ENDPOINT } = process.env;
@@ -315,7 +317,7 @@ export function useEmiratesPageBySlug(slug, variation = "master", fetchTrigger) 
       //   slug,
       //   variation,
       // };
-      const path = "/content/dam/ra-emirates/content-fragments/en/premium-economy-banner";
+      const path = `/content/dam/ra-emirates/content-fragments/${langCode}/premium-economy-banner`;
 
       const queryVariables = {
         path
@@ -364,7 +366,7 @@ export function useEmiratesExperienceBanner(slug, variation = "master", fetchTri
       //   slug,
       //   variation,
       // };
-      const path = "/content/dam/ra-emirates/content-fragments/en/experience-banner";
+      const path = `/content/dam/ra-emirates/content-fragments/${langCode}/experience-banner`;
 
       const queryVariables = {
         path
@@ -435,16 +437,18 @@ export function useChooseAFare(variation = "master", fetchTrigger) {
 export function useCabinDetails(variation = "master", fetchTrigger) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-
+  const langCode = getLangCode();
+  const path = `/content/dam/ra-emirates/content-fragments/${langCode}`;
   useEffect(() => {
     async function fetchData() {
-      const queryVariables = { variation };
+      const queryVariables = { variation, path };
 
       try {
         const response = await fetchPersistedQuery(
           REACT_APP_EMIRATES_ENDPOINT + "/getCabinDetails",
           queryVariables
         );
+        console.log("response from getCabinDetails:", response);
 
         if (response?.err) {
           setError(response.err);

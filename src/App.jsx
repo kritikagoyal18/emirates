@@ -4,13 +4,9 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import Footer from "./components/structure/Footer.jsx";
 import Header from "./components/structure/Header.jsx";
 import Home from "./pages/Home.jsx";
-import Articles from "./pages/Articles.jsx";
-import Services from "./pages/Services.jsx";
-import ArticleDetail from "./pages/ArticleDetail.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import { getURI } from "./utils";
 import "./App.scss";
-import FlightList from "./pages/FlightList.jsx";
 import Experience from "./pages/Experience.jsx";
 
 function App() {
