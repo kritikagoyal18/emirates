@@ -485,8 +485,8 @@ export function useEmiratesLocations(variation = "master", fetchTrigger) {
 
         if (response?.err) {
           setError(response.err);
-        } else if (response?.data?.emiratesCabinFeaturesList?.items) {
-          setData(response.data.emiratesCabinFeaturesList.items);
+        } else if (response?.data?.emiratesLocationList?.items) {
+          setData(response.data.emiratesLocationList.items);
         }
       } catch (e) {
         setError(e.message);
