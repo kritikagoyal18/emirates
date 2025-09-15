@@ -3,10 +3,11 @@
   top: -14rem;
 
   .booking-card {
-    width: min(1120px, 92%);
+    width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     overflow: hidden;
   }
@@ -19,12 +20,12 @@
     .tab {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 16px 20px;
+      justify-content: center;
+      padding: 14px 12px;
       background: #fff;
       border: none;
       border-right: 1px solid #eee;
-      font-size: 18px;
+      font-size: 16px;
       color: #666;
       cursor: pointer;
 
@@ -32,18 +33,24 @@
         color: #000;
         font-weight: 700;
       }
+      &.muted {
+        color: #aaa;
+        cursor: default;
+      }
       &:last-child { border-right: none; }
     }
   }
 
   .search-form {
     padding: 22px 24px 26px;
+    max-width: 1280px;
+    margin: 0 auto;
   }
 
   .sub-tabs {
     display: inline-flex;
     border: 1px solid #e5e5e5;
-    border-radius: 6px;
+    border-radius: 0;
     overflow: hidden;
     margin-bottom: 16px;
 
@@ -54,6 +61,7 @@
       font-weight: 600;
       color: #666;
       cursor: pointer;
+      border-radius: 0;
       &.active {
         background: #f4f4f4;
         color: #000;
@@ -78,7 +86,7 @@
     input {
       width: 100%;
       padding: 16px 14px;
-      border-radius: 6px;
+      border-radius: 0;
       border: 1px solid #ccc;
       font-size: 20px;
       &::placeholder { color: #888; }
@@ -98,7 +106,7 @@
     background: #d21f26;
     color: #fff;
     border: none;
-    border-radius: 6px;
+    border-radius: 0;
     font-size: 22px;
     font-weight: 700;
     cursor: pointer;

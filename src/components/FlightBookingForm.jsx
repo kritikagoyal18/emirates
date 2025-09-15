@@ -18,22 +18,10 @@ const FlightBookingForm = () => {
     <div className="flight-booking-form">
       <div className="booking-card">
         <div className="main-tabs">
-          <button type="button" className={`tab ${activeMainTab === "search" ? "active" : ""}`} onClick={() => setActiveMainTab("search")}>
-            <span className="icon">✈️</span>
-            <span>Search flights</span>
-          </button>
-          <button type="button" className={`tab ${activeMainTab === "manage" ? "active" : ""}`} onClick={() => setActiveMainTab("manage")}>
-            <span className="icon">🏷️</span>
-            <span>Manage booking / Check in</span>
-          </button>
-          <button type="button" className={`tab ${activeMainTab === "whats" ? "active" : ""}`} onClick={() => setActiveMainTab("whats")}>
-            <span className="icon">✈︎</span>
-            <span>What's on your flight</span>
-          </button>
-          <button type="button" className={`tab ${activeMainTab === "status" ? "active" : ""}`} onClick={() => setActiveMainTab("status")}>
-            <span className="icon">⏺</span>
-            <span>Flight status</span>
-          </button>
+          <button type="button" className={`tab ${activeMainTab === "search" ? "active" : ""}`} onClick={() => setActiveMainTab("search")}>Search flights</button>
+          <button type="button" className="tab muted">Manage booking / Check in</button>
+          <button type="button" className="tab muted">What's on your flight</button>
+          <button type="button" className="tab muted">Flight status</button>
         </div>
 
         {activeMainTab === "search" && (
