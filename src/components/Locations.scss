@@ -1,0 +1,66 @@
+.locations {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+
+  .location-row {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 200ms ease, transform 200ms ease;
+
+    &:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      transform: translateY(-2px);
+    }
+  }
+
+  .location-inner {
+    display: block;
+  }
+
+  .location-card__image {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+
+  .location-card__panel {
+    padding: 24px 28px 28px;
+    text-align: center;
+  }
+
+  /* Optional country label support if provided by data */
+  .location-card__country {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 10px;
+  }
+
+  .location-card__title {
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 0 0 12px 0;
+    color: #1b1b1b;
+  }
+
+  .location-card__desc {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 8px 0 0;
+  }
+}
+
+

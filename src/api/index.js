@@ -9,4 +9,5 @@ export {
   useEmiratesExperienceBanner,
   useChooseAFare,
   useCabinDetails,
+  useEmiratesLocations,
 } from "./usePersistedQueries";

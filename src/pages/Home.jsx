@@ -2,16 +2,14 @@ import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import ContentFragment from "../components/base/ContentFragment";
 import Hero from "../components/Hero";
-import CarouselItem from "../components/CarouselItem";
-
-import CallToActionSection from "../components/CallToActionSection";
-import { useEmiratesPageBySlug, useCabinDetails } from "../api";
+import { useEmiratesPageBySlug, useEmiratesLocations } from "../api";
 import "./Home.scss";
 import "../components/CarouselItem.scss";
 import FlightBookingForm from "../components/FlightBookingForm";
 import SaleOffers from "../components/SaleOffers";
 import AdobeTargetOffer from "../components/AdobeTargetOffer";
 import CabinDetails from "../components/CabinDetails";
+import Locations from "../components/Locations";
 
 
 const Home = () => {
@@ -26,8 +24,7 @@ const Home = () => {
   const { REACT_APP_HOST_URI } = process.env;
 
   const { data } = useEmiratesPageBySlug("premium-economy-banner", selectedVariation, fetchTrigger);
-  const { data: cabinDetails } = useCabinDetails(selectedVariation, fetchTrigger);
-
+  const { data: locations } = useEmiratesLocations(selectedVariation, fetchTrigger);
   /*
   const flightPackages = useMemo(() => {
     return fareTypes.map(fareType => {
@@ -150,8 +147,7 @@ const Home = () => {
       </ContentFragment>
       <AdobeTargetOffer/>
       <SaleOffers />
-      <CabinDetails items={cabinDetails || []} />
-
+      <Locations items={locations || []} />
       <img src="https://publish-p135360-e1341441.adobeaemcloud.com/content/dam/emirates/banners/home-page-centre.png" alt="centre-image"  style={{ height: 'auto', width: '100%' }}/>
       <img src="https://publish-p135360-e1341441.adobeaemcloud.com/content/dam/emirates/banners/home-page-bottom.png" alt="bottom-image"  style={{ height: 'auto', width: '100%' }}/>
 

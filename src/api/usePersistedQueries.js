@@ -397,6 +397,8 @@ export function useEmiratesExperienceBanner(slug, variation = "master", fetchTri
   return { data, error };
 }
 
+
+
 export function useChooseAFare(variation = "master", fetchTrigger) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -448,6 +450,38 @@ export function useCabinDetails(variation = "master", fetchTrigger) {
           queryVariables
         );
         console.log("response from getCabinDetails:", response);
+
+        if (response?.err) {
+          setError(response.err);
+        } else if (response?.data?.emiratesCabinFeaturesList?.items) {
+          setData(response.data.emiratesCabinFeaturesList.items);
+        }
+      } catch (e) {
+        setError(e.message);
+      }
+    }
+
+    fetchData();
+  }, [variation, fetchTrigger]);
+
+  return { data, error };
+}
+
+export function useEmiratesLocations(variation = "master", fetchTrigger) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const langCode = getLangCode();
+  const path = `/content/dam/ra-emirates/content-fragments/${langCode}`;
+  useEffect(() => {
+    async function fetchData() {
+      const queryVariables = { variation, path };
+
+      try {
+        const response = await fetchPersistedQuery(
+          REACT_APP_EMIRATES_ENDPOINT + "/getLocation",
+          queryVariables
+        );
+        console.log("response from getLocation:", response);
 
         if (response?.err) {
           setError(response.err);
