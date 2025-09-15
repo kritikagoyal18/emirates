@@ -7,6 +7,7 @@ import "./Locations.scss";
 
 const Locations = ({ items = [] }) => {
   if (!items || !items.length) return null;
+  console.log("items", items);
 
   return (
     <div className="locations container">
