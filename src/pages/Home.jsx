@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import ContentFragment from "../components/base/ContentFragment";
 import Hero from "../components/Hero";
 import { useEmiratesPageBySlug, useEmiratesLocations } from "../api";
@@ -11,7 +11,6 @@ import Locations from "../components/Locations";
 
 const Home = () => {
   const [fetchTrigger, setFetchTrigger] = useState(true);
-  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const selectedVariation = useMemo(
     () => searchParams.get("variation") || "master",
@@ -20,13 +19,6 @@ const Home = () => {
 
   const { data } = useEmiratesPageBySlug("premium-economy-banner", selectedVariation, fetchTrigger);
   const { data: locations } = useEmiratesLocations(selectedVariation, fetchTrigger);
-  console.log("locations", locations);
-
-  useEffect(() => {
-    if (!searchParams.get("variation")) {
-      navigate("/?variation=master");
-    }
-  }, [searchParams, navigate]);
 
   const pretitle = data?.pretitle;
   const title = data?.title;
@@ -37,7 +29,7 @@ const Home = () => {
 
   return (
     <>
-      <ContentFragment cf={data}>
+      <ContentFragment cf={data} label="Hero">
         <Hero image={image} title={title} pretitle={pretitle} description={description} {...(buttonLabel ? { buttonLabel } : {})} {...(buttonLink ? { buttonLink } : {})} />
         <FlightBookingForm />
       </ContentFragment>

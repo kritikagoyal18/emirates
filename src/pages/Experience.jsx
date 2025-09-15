@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import ContentFragment from "../components/base/ContentFragment";
 import Hero from "../components/Hero";
 
@@ -11,7 +11,6 @@ import CabinDetails from "../components/CabinDetails";
 
 const Experience = () => {
   const [fetchTrigger, setFetchTrigger] = useState(true);
-  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const selectedVariation = useMemo(
     () => searchParams.get("variation") || "master",
@@ -20,12 +19,6 @@ const Experience = () => {
 
   const { data } = useEmiratesExperienceBanner("experience-banner", selectedVariation, fetchTrigger);
   const { data: cabinDetails } = useCabinDetails(selectedVariation, fetchTrigger);
-
-  useEffect(() => {
-    if (!searchParams.get("variation")) {
-      navigate("/?variation=master");
-    }
-  }, [searchParams, navigate]);
 
   const pretitle = data?.pretitle;
   const title = data?.title;
@@ -36,7 +29,7 @@ const Experience = () => {
 
   return (
     <>
-      <ContentFragment cf={data}>
+      <ContentFragment cf={data} label="Hero">
         <Hero image={image} title={title} pretitle={pretitle} description={description} {...(buttonLabel ? { buttonLabel } : {})} {...(buttonLink ? { buttonLink } : {})} />
       </ContentFragment>
       <CabinDetails items={cabinDetails || []} />
