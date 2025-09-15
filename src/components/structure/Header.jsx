@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { getLangCode, setLangCode } from "../../utils";
 import Logo from "../Logo";
 import RedirectButton from "../RedirectButton";
 import "./Header.scss";
 
 const Header = () => {
-  const [langCode, setLangCode] = useState("en");
+  const [langCode, setLangCodeState] = useState(getLangCode());
 
   const navigations = [
     { label: "Book", href: "/services" },
@@ -17,6 +18,8 @@ const Header = () => {
 
   useEffect(() => {
     window.langCode = langCode;
+    setLangCode(langCode);
+    console.log("langCode:", langCode);
   }, [langCode]);
 
   return (
@@ -41,7 +44,7 @@ const Header = () => {
             aria-label="Select language"
             className="font-size-medium hover-effect"
             value={langCode}
-            onChange={(e) => setLangCode(e.target.value)}
+            onChange={(e) => setLangCodeState(e.target.value)}
           >
             <option value="en">EN</option>
             <option value="ar">AR</option>
