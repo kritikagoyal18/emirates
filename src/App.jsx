@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound.jsx";
 import { getURI } from "./utils";
 import "./App.scss";
 import FlightList from "./pages/FlightList.jsx";
+import Experience from "./pages/Experience.jsx";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <script
             src="https://universal-editor-service.adobe.io/cors.js"
             async
-          />
+          />  
            <script
             src="https://publish-p135360-e1341441.adobeaemcloud.com/content/dam/emirates/at.js"
             async
