@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 import { getLangCode } from "../utils";
 import aemHeadlessClient from "./aemHeadlessClient";
 
-const [langCode, setLangCodeState] = useState(getLangCode());
 
 const { REACT_APP_ENDPOINT } = process.env;
 const { REACT_APP_EMIRATES_ENDPOINT } = process.env;
@@ -317,7 +316,7 @@ export function useEmiratesPageBySlug(slug, variation = "master", fetchTrigger) 
       //   slug,
       //   variation,
       // };
-      const path = `/content/dam/ra-emirates/content-fragments/${langCode}/premium-economy-banner`;
+      const path = `/content/dam/ra-emirates/content-fragments/${getLangCode()}/premium-economy-banner`;
 
       const queryVariables = {
         path
@@ -366,7 +365,7 @@ export function useEmiratesExperienceBanner(slug, variation = "master", fetchTri
       //   slug,
       //   variation,
       // };
-      const path = `/content/dam/ra-emirates/content-fragments/${langCode}/experience-banner`;
+      const path = `/content/dam/ra-emirates/content-fragments/${getLangCode()}/experience-banner`;
 
       const queryVariables = {
         path
