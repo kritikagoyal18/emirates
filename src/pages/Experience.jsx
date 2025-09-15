@@ -4,7 +4,7 @@ import ContentFragment from "../components/base/ContentFragment";
 import Hero from "../components/Hero";
 
 import { useEmiratesExperienceBanner, useCabinDetails } from "../api";
-import "./Experience.scss";
+import "./Home.scss";
 import "../components/CarouselItem.scss";
 import CabinDetails from "../components/CabinDetails";
 
