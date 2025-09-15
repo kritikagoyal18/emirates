@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../Logo";
 import RedirectButton from "../RedirectButton";
 import "./Header.scss";
 
 const Header = () => {
+  const [langCode, setLangCode] = useState("en");
+
   const navigations = [
     { label: "Book", href: "/services" },
     { label: "Manage", href: "/articles" },
@@ -12,6 +14,10 @@ const Header = () => {
     { label: "Loyalty", href: "/flightlist" },
     { label: "Help", href: "/flightlist" }
   ];
+
+  useEffect(() => {
+    window.langCode = langCode;
+  }, [langCode]);
 
   return (
     <header className="">
@@ -31,6 +37,17 @@ const Header = () => {
           <Logo variant="emirates" />
         </div>
         <div className="buttons-wrapper">
+          <select
+            aria-label="Select language"
+            className="font-size-medium hover-effect"
+            value={langCode}
+            onChange={(e) => setLangCode(e.target.value)}
+          >
+            <option value="en">EN</option>
+            <option value="ar">AR</option>
+            <option value="fr">FR</option>
+            <option value="es">ES</option>
+          </select>
           <RedirectButton className="transparent font-size-medium hover-effect">
             LOG IN
           </RedirectButton>
