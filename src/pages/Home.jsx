@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <>
       <ContentFragment cf={data} label="Hero">
-        <Hero image={image} title={title} pretitle={pretitle} description={description} {...(buttonLabel ? { buttonLabel } : {})} {...(buttonLink ? { buttonLink } : {})} />
+        <Hero image={image} title={title} pretitle={pretitle} description={description} overlay={"linear-gradient(90deg,rgba(0,0,0,.42) 50vw,transparent calc(50vw + 1100px))"} {...(buttonLabel ? { buttonLabel } : {})} {...(buttonLink ? { buttonLink } : {})} />
         <FlightBookingForm />
       </ContentFragment>
       <Locations items={locations || []} />

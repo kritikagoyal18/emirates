@@ -4,10 +4,10 @@ import Text from "./base/Text";
 import RedirectButton from "./RedirectButton";
 import "./Hero.scss";
 
-const Hero = ({ image, title, pretitle, description, buttonLabel, buttonLink }) => {
+const Hero = ({ image, title, pretitle, description, buttonLabel, buttonLink, overlay }) => {
   return (
     <div className="background-blue" style={{
-      backgroundImage: `url(${image})`,
+      backgroundImage: overlay ? `${overlay}, url(${image})` : `url(${image})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
