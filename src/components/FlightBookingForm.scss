@@ -1,6 +1,6 @@
 .flight-booking-form {
   position: relative;
-  top: 0;
+  top: -14rem;
 
   .booking-card {
     width: 100%;
@@ -16,10 +16,6 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     border-bottom: 1px solid #e5e5e5;
-    position: relative;
-    transform: translateY(-28px);
-    margin-bottom: -28px;
-    z-index: 3;
 
     .tab {
       display: flex;
