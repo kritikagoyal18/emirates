@@ -23,9 +23,11 @@ const Hero = ({ image, title, pretitle, description, buttonLabel, buttonLink, ov
             </Title>
             <Text content={description} prop="description" label="Description" className="color-grey" />
           </div>
-          <RedirectButton href={buttonLink} className="hover-effect" propLabel="buttonLabel" propLink="buttonLink">
-            {buttonLabel}
-          </RedirectButton>
+          {buttonLabel && (
+            <RedirectButton href={buttonLink} className="hover-effect" propLabel="buttonLabel" propLink="buttonLink">
+              {buttonLabel}
+            </RedirectButton>
+          )}
         </div>
       </div>
     </div>
