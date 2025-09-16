@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { getLangCode, setLangCode } from "../../utils";
 import Logo from "../Logo";
-import RedirectButton from "../RedirectButton";
 import "./Header.scss";
 
 const Header = () => {
@@ -35,18 +34,18 @@ const Header = () => {
     <header className="">
       <div className="container header">
         <div className="navigations-wrapper">
+          <Logo variant="emirates" />
           <nav>
             {navigations.map(({ label, href }, index) => (
               <a
                 key={`${href}_${index}`}
                 href={href}
-                className="font-size-large font-weight-medium color-light hover-effect"
+                className="nav-link"
               >
                 {label}
               </a>
             ))}
           </nav>
-          <Logo variant="emirates" />
         </div>
         <div className="buttons-wrapper">
           <select
@@ -60,9 +59,7 @@ const Header = () => {
             <option value="fr">FR</option>
             <option value="es">ES</option>
           </select>
-          <RedirectButton className="transparent font-size-medium hover-effect">
-            LOG IN
-          </RedirectButton>
+          <a href="#" className="nav-link">Log in</a>
         </div>
       </div>
     </header>

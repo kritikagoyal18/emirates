@@ -1,42 +1,57 @@
 @import "../../styles/variables";
 
 header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  border:none;
   background-color: #333333;
+  border-bottom: 1px solid #333333;
   z-index: 11;
 
   .header {
-    height: 88px;
+    height: 55px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 80px;
+    padding: 0 24px;
   }
 
   .navigations-wrapper {
     display: flex;
     align-items: center;
-    gap: 175px;
+    gap: 24px;
 
     nav {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 36px;
+      gap: 24px;
     }
   }
 
   .buttons-wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
+
+    select {
+      border: 1px solid #e5e5e5;
+      background: #fff;
+      padding: 6px 10px;
+      color: #333;
+    }
 
     button {
-      height: 40px;
-      padding: 12px 40px;
-      border-radius: 10px;
+      background: transparent;
+      color: #b00012;
+      border: 1px solid #b00012;
+      padding: 8px 18px;
     }
+  }
+
+  .nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 8px 10px;
+    text-transform: uppercase;
   }
 }

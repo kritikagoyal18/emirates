@@ -4,8 +4,18 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  line-height: 0;
 
   h5 {
     display: inline;
   }
+}
+
+.icon.emirates {
+  width: 120px !important;
+  height: auto !important;
+}
+
+.icon.oneWorldLogo {
+  width: 80px !important;
 }
