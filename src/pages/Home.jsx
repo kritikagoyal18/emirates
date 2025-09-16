@@ -34,6 +34,8 @@ const Home = () => {
         <FlightBookingForm />
       </ContentFragment>
       <Locations items={locations || []} />
+      <img src="https://author-p135360-e1341441.adobeaemcloud.com/content/dam/ra-emirates/images/image1.png" alt="centre-image"  style={{ height: 'auto', width: '100%' }}/>
+      <img src="https://author-p135360-e1341441.adobeaemcloud.com/content/dam/ra-emirates/images/image2.png" alt="centre-image"  style={{ height: 'auto', width: '100%' }}/>
     </>
   );
 };
