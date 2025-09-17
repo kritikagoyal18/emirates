@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <>
       <ContentFragment cf={data} label="Hero">
-        <Hero image={image} title={title} pretitle={pretitle} description={description} overlay={"linear-gradient(90deg,rgba(0,0,0,.42) 50vw,transparent calc(50vw + 1100px))"} {...(buttonLabel ? { buttonLabel } : {})} {...(buttonLink ? { buttonLink } : {})} />
+        <Hero class="home-hero" image={image} title={title} pretitle={pretitle} description={description} overlay={"linear-gradient(90deg,rgba(0,0,0,.42) 50vw,transparent calc(50vw + 1100px))"} {...(buttonLabel ? { buttonLabel } : {})} {...(buttonLink ? { buttonLink } : {})} />
         <FlightBookingForm />
       </ContentFragment>
       <img src="https://author-p135360-e1341441.adobeaemcloud.com/content/dam/ra-emirates/images/image3.png" alt="centre-image"  style={{ height: 'auto', width: '100%' }}/>

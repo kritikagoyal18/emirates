@@ -30,7 +30,7 @@ const Experience = () => {
   return (
     <>
       <ContentFragment cf={data} label="Hero">
-        <Hero image={image} title={title} pretitle={pretitle} description={description} {...(buttonLabel ? { buttonLabel } : {})} {...(buttonLink ? { buttonLink } : {})} />
+        <Hero class="experience-hero" image={image} title={title} pretitle={pretitle} description={description} {...(buttonLabel ? { buttonLabel } : {})} {...(buttonLink ? { buttonLink } : {})} />
       </ContentFragment>
       <CabinDetails items={cabinDetails || []} />
     </>

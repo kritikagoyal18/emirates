@@ -46,6 +46,9 @@
     font-size: 31px;
     font-weight: 600;
   }
+
+}
+.home-hero{
   .description{
     padding-left: 33%;
   }
@@ -53,5 +56,28 @@
     padding-left: 48%;
     margin-top: -25px;
   }
-}
 
+}
+.experience-hero{
+  .content-button-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        padding-bottom: 30px;
+        text-align: center !important;
+  }
+  .hero-wrapper .content-wrapper {
+    align-items: center;
+}
+  .container.hero-wrapper {
+    max-width: 1200px !important;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 0;
+  }
+  .background-blue{
+    height: 480px !important; 
+  }
+  
+}
