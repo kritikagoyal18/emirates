@@ -11,7 +11,7 @@ const Hero = ({ image, title, pretitle, description, buttonLabel, buttonLink, ov
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
-      height: "600px",
+      height: "481px",
       width: "100%"
     }} data-aue-prop="image" data-aue-type="media" data-aue-label="Hero Image">
       <div className="container hero-wrapper">
