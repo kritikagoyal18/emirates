@@ -23,11 +23,15 @@ const dictionaries = {
       flightHotel: "Flight + hotel",
       departure: "Departure airport",
       arrival: "Arrival airport",
+      placeholders: {
+        departure: "New Delhi (DEL)",
+        arrival: "Arrival airport",
+      },
       continue: "Continue",
       advanced: "Advanced search: multi-city, promo codes, partner airlines",
     },
     locations: {
-      title: "Featured destinations from {country}",
+      titleWorld: "Featured destinations from World",
     },
   },
   ar: {
@@ -51,11 +55,15 @@ const dictionaries = {
       flightHotel: "رحلة + فندق",
       departure: "مطار المغادرة",
       arrival: "مطار الوصول",
+      placeholders: {
+        departure: "مثال: دبي (DXB)",
+        arrival: "مطار الوصول",
+      },
       continue: "متابعة",
       advanced: "بحث متقدم: مدن متعددة، رموز ترويجية، شركات شريكة",
     },
     locations: {
-      title: "وجهات مميزة من {country}",
+      titleWorld: "وجهات مميزة من العالم",
     },
   },
   fr: {
@@ -79,11 +87,15 @@ const dictionaries = {
       flightHotel: "Vol + hôtel",
       departure: "Aéroport de départ",
       arrival: "Aéroport d'arrivée",
+      placeholders: {
+        departure: "Ex. New Delhi (DEL)",
+        arrival: "Aéroport d'arrivée",
+      },
       continue: "Continuer",
       advanced: "Recherche avancée : multi-destinations, codes promo, compagnies partenaires",
     },
     locations: {
-      title: "Destinations phares depuis {country}",
+      titleWorld: "Destinations phares depuis le monde",
     },
   },
   es: {
@@ -107,11 +119,15 @@ const dictionaries = {
       flightHotel: "Vuelo + hotel",
       departure: "Aeropuerto de salida",
       arrival: "Aeropuerto de llegada",
+      placeholders: {
+        departure: "Ej.: Nueva Delhi (DEL)",
+        arrival: "Aeropuerto de llegada",
+      },
       continue: "Continuar",
       advanced: "Búsqueda avanzada: multicity, códigos promocionales, aerolíneas asociadas",
     },
     locations: {
-      title: "Destinos destacados desde {country}",
+      titleWorld: "Destinos destacados desde el mundo",
     },
   },
 };

@@ -12,7 +12,7 @@ const Locations = ({ items = [] }) => {
 
   return (
     <div className="locations container">
-      <h2 className="locations__heading">{t("locations.title", { country: "India" })}</h2>
+      <h2 className="locations__heading">{t("locations.titleWorld")}</h2>
       <div className="locations-grid">
         {items.map((cf, index) => (
           <div key={cf?._path || index} className="location-row">

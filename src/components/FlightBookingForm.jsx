@@ -41,7 +41,7 @@ const FlightBookingForm = () => {
                 <input
                   id="from"
                   type="text"
-                  placeholder="New Delhi (DEL)"
+                  placeholder={t("booking.placeholders.departure")}
                   value={fromAirport}
                   onChange={(e) => setFromAirport(e.target.value)}
                   required
@@ -52,7 +52,7 @@ const FlightBookingForm = () => {
                 <input
                   id="to"
                   type="text"
-                  placeholder="Arrival airport"
+                  placeholder={t("booking.placeholders.arrival")}
                   value={toAirport}
                   onChange={(e) => setToAirport(e.target.value)}
                   required

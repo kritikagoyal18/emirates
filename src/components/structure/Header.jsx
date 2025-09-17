@@ -64,7 +64,7 @@ const Header = () => {
             <option value="fr">FR</option>
             <option value="es">ES</option>
           </select>
-          <a href="#" className="nav-link">Log in</a>
+          <a href="#" className="nav-link">{t("header.login")}</a>
         </div>
       </div>
     </header>
