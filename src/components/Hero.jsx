@@ -6,7 +6,7 @@ import "./Hero.scss";
 
 const Hero = ({ image, title, pretitle, description, buttonLabel, buttonLink, overlay, className }) => {
   return (
-    <div className={`background-blue ${className || ''}`} style={{
+    <div className={`background-blue${className ? ` ${className}` : ''}`} style={{
       backgroundImage: overlay ? `${overlay}, url(${image})` : `url(${image})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
