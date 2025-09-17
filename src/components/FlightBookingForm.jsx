@@ -30,7 +30,10 @@ const FlightBookingForm = () => {
               <button type="button" className={`sub-tab ${activeSubTab === "flight" ? "active" : ""}`} onClick={() => setActiveSubTab("flight")}>Flight</button>
               <button type="button" className={`sub-tab ${activeSubTab === "flight-hotel" ? "active" : ""}`} onClick={() => setActiveSubTab("flight-hotel")}>Flight + hotel</button>
             </div>
-
+            <div className="advanced">
+              <a href="#" onClick={(e) => e.preventDefault()}>Advanced search: multi-city, promo codes, partner airlines</a>
+              <span className="chevron">›</span>
+            </div>
             <div className="fields">
               <div className="field">
                 <label htmlFor="from">Departure airport</label>
@@ -57,11 +60,6 @@ const FlightBookingForm = () => {
               <div className="submit">
                 <button type="submit" className="continue-button">Continue</button>
               </div>
-            </div>
-
-            <div className="advanced">
-              <a href="#" onClick={(e) => e.preventDefault()}>Advanced search: multi-city, promo codes, partner airlines</a>
-              <span className="chevron">›</span>
             </div>
           </form>
         )}
