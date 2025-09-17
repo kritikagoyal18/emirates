@@ -1,5 +1,6 @@
 import emirates from "../assets/emirates-logo.png"
 import oneWorldLogo from "../assets/Oneworld-Logo.png"
+import { Link } from "react-router-dom";
 import "./Logo.scss";
 
 /**
@@ -8,9 +9,9 @@ import "./Logo.scss";
 const Logo = ({ variant }) => {
   const icon = variant === "emirates" ? emirates : oneWorldLogo;
   return (
-    <a href="/" className="logo-wrapper">
-      <img src={icon} alt="Emirates" className={"icon " + variant} />
-    </a>
+    <Link to="/" className="logo-wrapper" aria-label="Go to home">
+      <img src={icon} alt="Emirates" className={"icon " + variant} width={125} height={90} />
+    </Link>
   );
 };
 
