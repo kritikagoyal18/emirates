@@ -23,11 +23,35 @@
   }
 
   button {
-    width: 240px;
-    height: 48px;
     background: #d21f26;
-    color: #fff;
     border-radius: 0;
+    color: #fff;
     font-weight: 700;
+    height: 44px;
+    width: 147px;
   }
 }
+.container.hero-wrapper {
+  max-width: 1200px !important;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.hero-wrapper {
+   .buttons-wrapper, .content-wrapper {
+      gap: 0;
+    }
+  .pretitle,.description{
+    color: #fff;
+    transform: rotate(0deg) scale(1) skew(-13deg) translate(0);
+    font-size: 31px;
+    font-weight: 600;
+  }
+  .description{
+    padding-left: 33%;
+  }
+  a{
+    padding-left: 48%;
+    margin-top: -25px;
+  }
+}
+

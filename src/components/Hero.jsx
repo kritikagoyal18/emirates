@@ -17,11 +17,11 @@ const Hero = ({ image, title, pretitle, description, buttonLabel, buttonLink, ov
       <div className="container hero-wrapper">
         <div className="content-button-wrapper">
           <div className="content-wrapper">
-            <Text content={pretitle} prop="pretitle" label="Pretitle" className="color-grey" />
+            <Text content={pretitle} prop="pretitle" label="Pretitle" className="color-light pretitle" />
             <Title heading="h1" prop="title" label="Title" className="color-light">
               {title}
             </Title>
-            <Text content={description} prop="description" label="Description" className="color-grey" />
+            <Text content={description} prop="description" label="Description" className="color-light description" />
           </div>
           {buttonLabel && (
             <RedirectButton href={buttonLink} className="hover-effect" propLabel="buttonLabel" propLink="buttonLink">
