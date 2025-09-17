@@ -56,6 +56,15 @@
     padding-left: 48%;
     margin-top: -25px;
   }
+  .container.hero-wrapper {
+    max-width: 1200px !important;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 0;
+    align-items: center;
+    padding-top: 100px;
+
+  }
 
 }
 .experience-hero{
@@ -77,7 +86,6 @@
     padding-bottom: 0;
     align-items: center;
     padding-top: 100px;
-
   }
 }
 .experience-hero.background-blue{
