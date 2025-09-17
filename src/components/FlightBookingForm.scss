@@ -95,7 +95,7 @@
     input {
       width: 100%;
       padding: 16px 14px;
-      border-radius: 0;
+      border-radius: 0.3rem;
       border: 1px solid #ccc;
       font-size: 20px;
       &::placeholder { color: #888; }
@@ -110,15 +110,16 @@
   }
 
   .continue-button {
-    width: 100%;
-    padding: 18px;
     background: #d21f26;
-    color: #fff;
     border: none;
     border-radius: 0;
+    color: #fff;
+    cursor: pointer;
     font-size: 22px;
     font-weight: 700;
-    cursor: pointer;
+    padding: 14px;
+    width: 100%;
+    border-radius: .3rem;
   }
 
   .advanced {
