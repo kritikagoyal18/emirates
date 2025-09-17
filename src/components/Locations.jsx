@@ -4,6 +4,7 @@ import Image from "./base/Image";
 import Title from "./base/Title";
 import Text from "./base/Text";
 import "./Locations.scss";
+import { t } from "../utils/i18n";
 
 const Locations = ({ items = [] }) => {
   if (!items || !items.length) return null;
@@ -11,7 +12,7 @@ const Locations = ({ items = [] }) => {
 
   return (
     <div className="locations container">
-      <h2 className="locations__heading">Featured destinations from India</h2>
+      <h2 className="locations__heading">{t("locations.title", { country: "India" })}</h2>
       <div className="locations-grid">
         {items.map((cf, index) => (
           <div key={cf?._path || index} className="location-row">

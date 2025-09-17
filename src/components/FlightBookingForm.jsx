@@ -1,6 +1,7 @@
 import React, {useCallback, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import "./FlightBookingForm.scss";
+import { t } from "../utils/i18n";
 
 const FlightBookingForm = () => {
   const [activeMainTab, setActiveMainTab] = useState("search");
@@ -18,25 +19,25 @@ const FlightBookingForm = () => {
     <div className="flight-booking-form">
       <div className="booking-card">
         <div className="main-tabs">
-          <button type="button" className={`tab ${activeMainTab === "search" ? "active" : ""}`} onClick={() => setActiveMainTab("search")}>Search flights</button>
-          <button type="button" className="tab muted">Manage booking / Check in</button>
-          <button type="button" className="tab muted">What's on your flight</button>
-          <button type="button" className="tab muted">Flight status</button>
+          <button type="button" className={`tab ${activeMainTab === "search" ? "active" : ""}`} onClick={() => setActiveMainTab("search")}>{t("booking.tabs.search")}</button>
+          <button type="button" className="tab muted">{t("booking.tabs.manage")}</button>
+          <button type="button" className="tab muted">{t("booking.tabs.whatsOn")}</button>
+          <button type="button" className="tab muted">{t("booking.tabs.status")}</button>
         </div>
 
         {activeMainTab === "search" && (
           <form onSubmit={handleSubmit} className="search-form">
             <div className="sub-tabs">
-              <button type="button" className={`sub-tab ${activeSubTab === "flight" ? "active" : ""}`} onClick={() => setActiveSubTab("flight")}>Flight</button>
-              <button type="button" className={`sub-tab ${activeSubTab === "flight-hotel" ? "active" : ""}`} onClick={() => setActiveSubTab("flight-hotel")}>Flight + hotel</button>
+              <button type="button" className={`sub-tab ${activeSubTab === "flight" ? "active" : ""}`} onClick={() => setActiveSubTab("flight")}>{t("booking.flight")}</button>
+              <button type="button" className={`sub-tab ${activeSubTab === "flight-hotel" ? "active" : ""}`} onClick={() => setActiveSubTab("flight-hotel")}>{t("booking.flightHotel")}</button>
             </div>
             <div className="advanced">
-              <a href="#" onClick={(e) => e.preventDefault()}>Advanced search: multi-city, promo codes, partner airlines</a>
+              <a href="#" onClick={(e) => e.preventDefault()}>{t("booking.advanced")}</a>
               <span className="chevron">›</span>
             </div>
             <div className="fields">
               <div className="field">
-                <label htmlFor="from">Departure airport</label>
+                <label htmlFor="from">{t("booking.departure")}</label>
                 <input
                   id="from"
                   type="text"
@@ -47,7 +48,7 @@ const FlightBookingForm = () => {
                 />
               </div>
               <div className="field">
-                <label htmlFor="to">Arrival airport</label>
+                <label htmlFor="to">{t("booking.arrival")}</label>
                 <input
                   id="to"
                   type="text"
@@ -58,7 +59,7 @@ const FlightBookingForm = () => {
                 />
               </div>
               <div className="submit">
-                <button type="submit" className="continue-button">Continue</button>
+                <button type="submit" className="continue-button">{t("booking.continue")}</button>
               </div>
             </div>
           </form>

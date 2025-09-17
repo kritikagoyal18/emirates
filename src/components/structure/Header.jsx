@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { getLangCode, setLangCode } from "../../utils";
+import { t } from "../../utils/i18n";
 import Logo from "../Logo";
 import "./Header.scss";
 
@@ -7,12 +8,12 @@ const Header = () => {
   const [langCode, setLangCodeState] = useState(getLangCode());
 
   const navigations = [
-    { label: "Book", href: "/services" },
-    { label: "Manage", href: "/articles" },
-    { label: "Experience", href: "/experience" },
-    { label: "Where We Fly", href: "/articles" },
-    { label: "Loyalty", href: "/flightlist" },
-    { label: "Help", href: "/flightlist" }
+    { label: t("header.book"), href: "/services" },
+    { label: t("header.manage"), href: "/articles" },
+    { label: t("header.experience"), href: "/experience" },
+    { label: t("header.whereWeFly"), href: "/articles" },
+    { label: t("header.loyalty"), href: "/flightlist" },
+    { label: t("header.help"), href: "/flightlist" }
   ];
 
   const isFirstRunRef = useRef(true);
@@ -20,6 +21,10 @@ const Header = () => {
   useEffect(() => {
     window.langCode = langCode;
     setLangCode(langCode);
+    try {
+      const { setDocumentLanguageAttributes } = require("../../utils/i18n");
+      setDocumentLanguageAttributes(langCode);
+    } catch (_) {}
     console.log("langCode:", langCode);
     if (isFirstRunRef.current) {
       isFirstRunRef.current = false;
