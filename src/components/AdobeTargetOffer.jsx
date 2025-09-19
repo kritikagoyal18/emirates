@@ -34,6 +34,8 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
                             if (contentAction && contentAction.content) {
                                 mboxDiv.innerHTML = contentAction.content;
                                 console.log(`A/B test content manually applied to mbox: ${mboxName}`);
+                                console.log('Content applied:', contentAction.content);
+                                console.log('Div content after applying:', mboxDiv.innerHTML);
                             } else {
                                 console.log("No setContent action found in offer");
                             }
