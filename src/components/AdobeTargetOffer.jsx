@@ -26,13 +26,20 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
                     success: function(offer) {
                         console.log("Adobe Target A/B test offer received:", offer);
                         
-                        // Apply the offer directly - Adobe Target handles A/B test logic
-                        window.adobe.target.applyOffer({
-                            mbox: mboxName,
-                            offer: offer
-                        });
-                        
-                        console.log(`A/B test offer applied to mbox: ${mboxName}`);
+                        // Extract content from the offer and manually apply it
+                        const mboxDiv = document.getElementById(mboxName);
+                        if (mboxDiv && offer && offer.length > 0) {
+                            // Find the setContent action
+                            const contentAction = offer.find(action => action.action === 'setContent');
+                            if (contentAction && contentAction.content) {
+                                mboxDiv.innerHTML = contentAction.content;
+                                console.log(`A/B test content manually applied to mbox: ${mboxName}`);
+                            } else {
+                                console.log("No setContent action found in offer");
+                            }
+                        } else {
+                            console.log("Mbox element not found or offer is empty");
+                        }
                     },
                     error: function(status, error) {
                         console.error("Failed to fetch Adobe Target A/B test offer:", status, error);
