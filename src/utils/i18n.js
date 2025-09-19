@@ -33,6 +33,39 @@ const dictionaries = {
     locations: {
       titleWorld: "Featured destinations from World",
     },
+    footer: {
+      rights: "© 2025 The Emirates Group. All Rights Reserved.",
+      about: {
+        title: "About us",
+        aboutUs: "About us",
+        careers: "Careers",
+        mediaCentre: "Media Centre",
+        ourPlanet: "Our planet",
+        ourPeople: "Our people",
+        ourCommunities: "Our communities",
+      },
+      help: {
+        title: "Help",
+        helpContact: "Help and Contact",
+        travelUpdates: "Travel Updates",
+        specialAssistance: "Special Assistance",
+        faq: "Frequently asked questions",
+      },
+      book: {
+        title: "Book",
+        bookFlights: "Book flights",
+        travelServices: "Travel services",
+        transportation: "Transportation",
+        planningTrip: "Planning your trip",
+      },
+      manage: {
+        title: "Manage",
+        checkIn: "Check‑in",
+        manageBooking: "Manage your booking",
+        chauffeurDrive: "Chauffeur drive",
+        flightStatus: "Flight status",
+      },
+    },
   },
   ar: {
     header: {
@@ -64,6 +97,39 @@ const dictionaries = {
     },
     locations: {
       titleWorld: "وجهات مميزة من العالم",
+    },
+    footer: {
+      rights: "© 2025 مجموعة الإمارات. جميع الحقوق محفوظة.",
+      about: {
+        title: "نبذة عنا",
+        aboutUs: "نبذة عنا",
+        careers: "وظائف",
+        mediaCentre: "المركز الإعلامي",
+        ourPlanet: "كوكبنا",
+        ourPeople: "أفرادنا",
+        ourCommunities: "مجتمعاتنا",
+      },
+      help: {
+        title: "مساعدة",
+        helpContact: "المساعدة والتواصل",
+        travelUpdates: "تحديثات السفر",
+        specialAssistance: "مساعدة خاصة",
+        faq: "أسئلة شائعة",
+      },
+      book: {
+        title: "الحجز",
+        bookFlights: "حجز الرحلات",
+        travelServices: "خدمات السفر",
+        transportation: "المواصلات",
+        planningTrip: "التخطيط لرحلتك",
+      },
+      manage: {
+        title: "إدارة",
+        checkIn: "تسجيل الوصول",
+        manageBooking: "إدارة الحجز",
+        chauffeurDrive: "سائق خاص",
+        flightStatus: "حالة الرحلة",
+      },
     },
   },
   fr: {
@@ -97,6 +163,39 @@ const dictionaries = {
     locations: {
       titleWorld: "Destinations phares depuis le monde",
     },
+    footer: {
+      rights: "© 2025 The Emirates Group. Tous droits réservés.",
+      about: {
+        title: "À propos",
+        aboutUs: "À propos de nous",
+        careers: "Carrières",
+        mediaCentre: "Centre média",
+        ourPlanet: "Notre planète",
+        ourPeople: "Nos équipes",
+        ourCommunities: "Nos communautés",
+      },
+      help: {
+        title: "Aide",
+        helpContact: "Aide et contact",
+        travelUpdates: "Mises à jour voyage",
+        specialAssistance: "Assistance spéciale",
+        faq: "Questions fréquentes",
+      },
+      book: {
+        title: "Réserver",
+        bookFlights: "Réserver des vols",
+        travelServices: "Services de voyage",
+        transportation: "Transports",
+        planningTrip: "Planifier votre voyage",
+      },
+      manage: {
+        title: "Gérer",
+        checkIn: "Enregistrement",
+        manageBooking: "Gérer la réservation",
+        chauffeurDrive: "Chauffeur‑drive",
+        flightStatus: "Statut du vol",
+      },
+    },
   },
   es: {
     header: {
@@ -128,6 +227,39 @@ const dictionaries = {
     },
     locations: {
       titleWorld: "Destinos destacados desde el mundo",
+    },
+    footer: {
+      rights: "© 2025 Grupo Emirates. Todos los derechos reservados.",
+      about: {
+        title: "Sobre nosotros",
+        aboutUs: "Sobre nosotros",
+        careers: "Empleo",
+        mediaCentre: "Centro de prensa",
+        ourPlanet: "Nuestro planeta",
+        ourPeople: "Nuestra gente",
+        ourCommunities: "Nuestras comunidades",
+      },
+      help: {
+        title: "Ayuda",
+        helpContact: "Ayuda y contacto",
+        travelUpdates: "Actualizaciones de viaje",
+        specialAssistance: "Asistencia especial",
+        faq: "Preguntas frecuentes",
+      },
+      book: {
+        title: "Reservar",
+        bookFlights: "Reservar vuelos",
+        travelServices: "Servicios de viaje",
+        transportation: "Transporte",
+        planningTrip: "Planificación del viaje",
+      },
+      manage: {
+        title: "Gestionar",
+        checkIn: "Check‑in",
+        manageBooking: "Gestionar tu reserva",
+        chauffeurDrive: "Chauffeur‑drive",
+        flightStatus: "Estado del vuelo",
+      },
     },
   },
 };

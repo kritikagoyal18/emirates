@@ -316,7 +316,7 @@ export function useEmiratesPageBySlug(slug, variation = "master", fetchTrigger) 
       //   slug,
       //   variation,
       // };
-      const path = `/content/dam/ra-emirates/content-fragments/${getLangCode()}/premium-economy-banner`;
+      const path = `/content/dam/emirates-flybetter/content-fragments/${getLangCode()}/premium-economy-banner`;
 
       const queryVariables = {
         path
@@ -365,7 +365,7 @@ export function useEmiratesExperienceBanner(slug, variation = "master", fetchTri
       //   slug,
       //   variation,
       // };
-      const path = `/content/dam/ra-emirates/content-fragments/${getLangCode()}/experience-banner`;
+      const path = `/content/dam/emirates-flybetter/content-fragments/${getLangCode()}/experience-banner`;
 
       const queryVariables = {
         path
@@ -439,7 +439,7 @@ export function useCabinDetails(variation = "master", fetchTrigger) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const langCode = getLangCode();
-  const path = `/content/dam/ra-emirates/content-fragments/${langCode}`;
+  const path = `/content/dam/emirates-flybetter/content-fragments/${langCode}`;
   useEffect(() => {
     async function fetchData() {
       const queryVariables = { variation, path };
@@ -471,7 +471,7 @@ export function useEmiratesLocations(variation = "master", fetchTrigger) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const langCode = getLangCode();
-  const path = `/content/dam/ra-emirates/content-fragments/${langCode}`;
+  const path = `/content/dam/emirates-flybetter/content-fragments/${langCode}`;
   useEffect(() => {
     async function fetchData() {
       const queryVariables = { variation, path };

@@ -1,16 +1,21 @@
 @import "../../styles/variables";
 
 footer {
-  background-color: #01122c;
+  background-color: #111;
 
   .footer {
     display: flex;
     flex-direction: column;
-    padding: 64px 140px;
-    gap: 72px;
+    gap: 24px;
 
     p {
       color:#ffffff;
+    }
+
+    .footer-strip {
+      height: 12px;
+      width: 100%;
+      background: linear-gradient(90deg, #b00012 0%, #cf1020 50%, #b00012 100%);
     }
 
     .top-wrapper {
@@ -50,6 +55,9 @@ footer {
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
+    padding: 24px 0;
+    color: #d8d8d8;
+    font-size: 13px;
 
     .rights-wrapper {
       display: flex;
@@ -61,6 +69,18 @@ footer {
       display: flex;
       align-items: center;
       gap: 16px;
+
+      .icon.sm {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        border: 1px solid #555;
+        color: #d8d8d8;
+        text-decoration: none;
+        font-size: 14px;
+      }
     }
   }
 }
