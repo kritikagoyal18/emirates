@@ -25,7 +25,7 @@ const Experience = () => {
   const description = data?.description;
   const buttonLabel = data?.buttonLabel;
   const buttonLink = data?.buttonLink;
-  const image = data?.image?._authorUrl;
+  const image = data?.image?._publishUrl || data?.image?._authorUrl;
 
   return (
     <>
