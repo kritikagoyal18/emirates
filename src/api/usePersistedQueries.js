@@ -312,14 +312,12 @@ export function useEmiratesPageBySlug(slug, variation = "master", fetchTrigger) 
 
   useEffect(() => {
     async function fetchData() {
-      // const queryVariables = {
-      //   slug,
-      //   variation,
-      // };
-      const path = `/content/dam/emirates-flybetter/content-fragments/${getLangCode()}/premium-economy-banner`;
+      const path = `/content/dam/emirates-flybetter/content-fragments/${getLangCode()}/emirates-banners`;
+      let variation = "master";
 
       const queryVariables = {
-        path
+        path,
+        variation: variation,
       };
 
       const response = await fetchPersistedQuery(
@@ -361,14 +359,12 @@ export function useEmiratesExperienceBanner(slug, variation = "master", fetchTri
 
   useEffect(() => {
     async function fetchData() {
-      // const queryVariables = {
-      //   slug,
-      //   variation,
-      // };
-      const path = `/content/dam/emirates-flybetter/content-fragments/${getLangCode()}/experience-banner`;
+      const path = `/content/dam/emirates-flybetter/content-fragments/${getLangCode()}/emirates-banners`;
+      let variation = "experience";
 
       const queryVariables = {
-        path
+        path,
+        variation: variation,
       };
 
       const response = await fetchPersistedQuery(
