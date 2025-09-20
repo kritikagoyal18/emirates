@@ -40,7 +40,7 @@ footer {
 
           h5 {
             font-size: 1.6rem;
-            line-height: 1.8rem;
+            line-height: 1rem;
             font-weight: 600;
             color: #ffffff;
             margin: 0 0 8px 0;
@@ -55,7 +55,7 @@ footer {
             align-self: stretch;
 
             a {
-              font-size: 1.4rem;
+              font-size: 0.8rem;
               line-height: 1.55;
               display: inline-block;
               color: #a9a9a9;
@@ -83,6 +83,7 @@ footer {
       display: flex;
       align-items: center;
       gap: 4px;
+      padding-right: 10px;
     }
 
     .social-media-wrapper {
