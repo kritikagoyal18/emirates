@@ -38,12 +38,32 @@ footer {
           flex: 1;
           gap: 16px;
 
+          h5 {
+            font-size: 1.6rem;
+            line-height: 1.8rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0 0 8px 0;
+            font-family: HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+          }
+
           nav {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 12px;
             align-self: stretch;
+
+            a {
+              font-size: 1.4rem;
+              line-height: 1.55;
+              display: inline-block;
+              color: #a9a9a9;
+              text-decoration: none;
+              font-family: HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+              font-weight: 400;
+              align-self: flex-start;
+            }
           }
         }
       }
