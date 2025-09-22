@@ -153,3 +153,64 @@
     // Uses default styles
   }
 }
+
+// MVT (Multivariate Test) specific styles
+.mvt-hero {
+  position: relative;
+  
+  .mvt-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 481px;
+    background: #f5f5f5;
+    color: #666;
+    font-size: 16px;
+  }
+  
+  // MVT Headline Variants
+  .mvt-headline {
+    transition: all 0.3s ease;
+    
+    // Additional styling for different headline variants
+    &[style*="font-size: 52px"] {
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    &[style*="font-weight: bold"] {
+      letter-spacing: 1px;
+    }
+  }
+  
+  // MVT Button Variants
+  .mvt-button {
+    transition: all 0.3s ease;
+    min-width: 200px;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  }
+  
+  // Button color variants
+  &.mvt-button-red .mvt-button {
+    background-color: #d32f2f;
+    border-color: #d32f2f;
+    
+    &:hover {
+      background-color: #b71c1c;
+      border-color: #b71c1c;
+    }
+  }
+  
+  &.mvt-button-blue .mvt-button {
+    background-color: #1976d2;
+    border-color: #1976d2;
+    
+    &:hover {
+      background-color: #1565c0;
+      border-color: #1565c0;
+    }
+  }
+}
