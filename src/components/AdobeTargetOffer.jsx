@@ -101,10 +101,10 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
 
         return `<div style="padding:90px; background:#e3f2fd url('https://publish-p135360-e1341441.adobeaemcloud.com/content/dam/emirates/emirates-a380-flying-in-clean-blue-sky-t1024x480.png') center/cover no-repeat; margin:20px 0;">
             <h2 style="color:#fdfdfd; font-family:'Mylius Modern', sans-serif;">${t.title}</h2>
-            <p style="color:#fdfdfd; font-size:16px; line-height:1.5;">
+            <p style="color:#fdfdfd; padding-bottom:10px; font-size:16px; line-height:1.5;">
                 ${t.description}
             </p>
-            <button style="background:#1976d2; color:#fff; padding:12px 24px; border:none; border-radius:4px; cursor:pointer; font-size:16px;">
+            <button style="background:#d21f26; color:#fff; padding:12px 24px; border:none; border-radius:4px; cursor:pointer; font-size:16px; margin-top: 20px;">
                 ${t.button}
             </button>
         </div>`;
