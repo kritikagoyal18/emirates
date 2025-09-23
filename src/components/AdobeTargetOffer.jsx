@@ -59,7 +59,7 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
   
     }, [mboxName]); // Re-run if mboxName changes
  
-    return <div id={mboxName}>Loading A/B test...</div>;
+    return <div id={mboxName}></div>;
 };
 
 export default AdobeTargetOffer;

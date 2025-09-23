@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import ContentFragment from "../components/base/ContentFragment";
 import Hero from "../components/Hero";
 import MVTHero from "../components/MVTHero";
+import MVTCabinDetails from "../components/MVTCabinDetails";
 import AdobeTargetOffer from "../components/AdobeTargetOffer";
 
 import { useEmiratesExperienceBanner, useCabinDetails } from "../api";
@@ -55,7 +56,17 @@ const Experience = () => {
       {/* Adobe Target A/B Test Area - Managed from Adobe Target Interface */}
       <AdobeTargetOffer mboxName="emirates-experience-ab-test" />
       
-      <CabinDetails items={cabinDetails || []} />
+      {/* MVT Cabin Details Test Area */}
+      <MVTCabinDetails mboxName="emirates-cabin-mvt" items={cabinDetails || []} />
+      
+      {/* VEC-targetable cabin details for visual editing */}
+      <div 
+        className="cabin-details-section vec-targetable"
+        data-at-element="cabin-details"
+        suppressHydrationWarning
+      >
+        <CabinDetails items={cabinDetails || []} />
+      </div>
     </>
   );
 };
