@@ -59,14 +59,16 @@ const Experience = () => {
       {/* MVT Cabin Details Test Area updated */}
       <MVTCabinDetails mboxName="emirates-cabin-mvt" items={cabinDetails || []} />
       
-      {/* VEC-targetable cabin details for visual editing */}
-      <div 
-        className="cabin-details-section vec-targetable"
-        data-at-element="cabin-details"
-        suppressHydrationWarning
-      >
-        <CabinDetails items={cabinDetails || []} />
-      </div>
+      {/* VEC-targetable cabin details for visual editing (disabled to avoid duplicate rendering) */}
+      {false && (
+        <div 
+          className="cabin-details-section vec-targetable"
+          data-at-element="cabin-details"
+          suppressHydrationWarning
+        >
+          <CabinDetails items={cabinDetails || []} />
+        </div>
+      )}
     </>
   );
 };
