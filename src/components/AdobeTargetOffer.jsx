@@ -43,14 +43,16 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
                             // Find the setContent action
                             const contentAction = offer.find(action => action.action === 'setContent');
                             if (contentAction && contentAction.content) {
-                                // Apply the content and then translate any text elements
-                                mboxDiv.innerHTML = contentAction.content;
-                                
-                                // Translate the content after it's applied
-                                translateTargetedContent(mboxDiv);
+                                // If language is not English, show static translated content
+                                if (lang !== 'en') {
+                                    mboxDiv.innerHTML = getTranslatedOfferContent(lang);
+                                } else {
+                                    // For English, show the original Adobe Target content
+                                    mboxDiv.innerHTML = contentAction.content;
+                                }
                                 
                                 console.log(`A/B test content manually applied to mbox: ${mboxName}`);
-                                console.log('Content applied:', contentAction.content);
+                                console.log('Content applied for lang:', lang);
                                 console.log('Div content after applying:', mboxDiv.innerHTML);
                             } else {
                                 console.log("No setContent action found in offer");
@@ -74,6 +76,39 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
             setTimeout(fetchAndRenderOffer, 2000);
  
     }, [mboxName, lang]); // Re-run if mboxName or language changes
+
+    // Function to get static translated content for non-English languages
+    const getTranslatedOfferContent = (language) => {
+        const translations = {
+            ar: {
+                title: "جديد على طيران الإمارات — احصل على العرض",
+                description: "مرحباً بك في طيران الإمارات. اكتشف عرضاً تمهيدياً خاصاً وابدأ رحلتك المميزة اليوم.",
+                button: "احصل على العرض"
+            },
+            fr: {
+                title: "Nouveau chez Emirates — Obtenez l'offre",
+                description: "Bienvenue chez Emirates. Débloquez une offre d'introduction spéciale et commencez votre voyage premium aujourd'hui.",
+                button: "Obtenir l'offre"
+            },
+            es: {
+                title: "Nuevo en Emirates — Obtén la oferta",
+                description: "Bienvenido a Emirates. Desbloquea una oferta de introducción especial y comienza tu viaje premium hoy.",
+                button: "Obtener oferta"
+            }
+        };
+
+        const t = translations[language] || translations.ar; // fallback to Arabic
+
+        return `<div style="padding:90px; background:#e3f2fd url('https://publish-p135360-e1341441.adobeaemcloud.com/content/dam/emirates/emirates-a380-flying-in-clean-blue-sky-t1024x480.png') center/cover no-repeat; margin:20px 0;">
+            <h2 style="color:#fdfdfd; font-family:'Mylius Modern', sans-serif;">${t.title}</h2>
+            <p style="color:#fdfdfd; font-size:16px; line-height:1.5;">
+                ${t.description}
+            </p>
+            <button style="background:#1976d2; color:#fff; padding:12px 24px; border:none; border-radius:4px; cursor:pointer; font-size:16px;">
+                ${t.button}
+            </button>
+        </div>`;
+    };
 
     // Function to translate targeted content - simple approach like other components
     const translateTargetedContent = (element) => {
