@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
-import { getLangCode } from "../utils";
+import React, { useEffect, useState } from 'react';
+import { getLangCode, subscribeLangCode } from "../utils";
+import { useI18n } from "../utils/i18n";
 import "./AdobeTargetOffer.scss";
 
 /**
@@ -7,11 +8,20 @@ import "./AdobeTargetOffer.scss";
  * This component integrates with A/B tests created in Adobe Target's interface
  */
 const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
+    const [lang, setLang] = useState(getLangCode());
+    const { t } = useI18n(); // Get translation function
+
+    // Re-fetch when language changes (SPA locale switch)
+    useEffect(() => {
+        const unsubscribe = subscribeLangCode((newLang) => setLang(newLang));
+        return unsubscribe;
+    }, []);
+
     useEffect(() => {
         
             // Function to fetch and render the offer from Adobe Target A/B test
             const fetchAndRenderOffer = () => {
-                console.log(`Fetching A/B test offer for mbox: ${mboxName}`);
+                console.log(`Fetching A/B test offer for mbox: ${mboxName}`, { lang });
                 
                 // Ensure Adobe Target is available
                 if (!window.adobe || !window.adobe.target) {
@@ -24,7 +34,7 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
                 // Use Adobe Target's native getOffer method for A/B tests
                 window.adobe.target.getOffer({
                     mbox: mboxName,
-                    params: { lang: getLangCode() }, // Include language parameter like other components
+                    params: { lang }, // Include language parameter like other components
                     success: function(offer) {
                         console.log("Adobe Target A/B test offer received:", offer);
                         
@@ -34,7 +44,12 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
                             // Find the setContent action
                             const contentAction = offer.find(action => action.action === 'setContent');
                             if (contentAction && contentAction.content) {
+                                // Apply the content and then translate any text elements
                                 mboxDiv.innerHTML = contentAction.content;
+                                
+                                // Translate the content after it's applied
+                                translateTargetedContent(mboxDiv);
+                                
                                 console.log(`A/B test content manually applied to mbox: ${mboxName}`);
                                 console.log('Content applied:', contentAction.content);
                                 console.log('Div content after applying:', mboxDiv.innerHTML);
@@ -58,8 +73,37 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
             };  
             // Fetch and render the offer when the component mounts
             setTimeout(fetchAndRenderOffer, 2000);
-  
-    }, [mboxName]); // Re-run if mboxName changes
+ 
+    }, [mboxName, lang]); // Re-run if mboxName or language changes
+
+    // Function to translate targeted content
+    const translateTargetedContent = (element) => {
+        // Define translation mappings for common A/B test content
+        const translations = {
+            'New to Emirates — Get Offer': t('targeted.newToEmirates'),
+            'Welcome to Emirates. Unlock a special introductory offer and start your premium journey today.': t('targeted.welcomeMessage'),
+            'Get Offer': t('targeted.getOffer'),
+            'Explore Premium - New': t('targeted.explorePremium'),
+            'Experience B - Premium': t('targeted.experienceB'),
+            'Discover our enhanced Emirates experience with premium comfort and luxury services that exceed expectations.': t('targeted.premiumDescription')
+        };
+
+        // Find and replace text content
+        const walker = document.createTreeWalker(
+            element,
+            NodeFilter.SHOW_TEXT,
+            null,
+            false
+        );
+
+        let node;
+        while (node = walker.nextNode()) {
+            const text = node.textContent.trim();
+            if (translations[text]) {
+                node.textContent = translations[text];
+            }
+        }
+    };
  
     return <div id={mboxName}></div>;
 };

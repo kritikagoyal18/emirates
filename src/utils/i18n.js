@@ -65,6 +65,14 @@ const dictionaries = {
         chauffeurDrive: "Chauffeur drive",
         flightStatus: "Flight status",
       },
+      targeted: {
+        newToEmirates: "New to Emirates — Get Offer",
+        welcomeMessage: "Welcome to Emirates. Unlock a special introductory offer and start your premium journey today.",
+        getOffer: "Get Offer",
+        explorePremium: "Explore Premium - New",
+        experienceB: "Experience B - Premium",
+        premiumDescription: "Discover our enhanced Emirates experience with premium comfort and luxury services that exceed expectations."
+      },
     },
   },
   ar: {
@@ -129,6 +137,14 @@ const dictionaries = {
         manageBooking: "إدارة الحجز",
         chauffeurDrive: "سائق خاص",
         flightStatus: "حالة الرحلة",
+      },
+      targeted: {
+        newToEmirates: "جديد على طيران الإمارات — احصل على العرض",
+        welcomeMessage: "مرحباً بك في طيران الإمارات. اكتشف عرضاً تمهيدياً خاصاً وابدأ رحلتك المميزة اليوم.",
+        getOffer: "احصل على العرض",
+        explorePremium: "استكشف المميز - جديد",
+        experienceB: "التجربة ب - مميز",
+        premiumDescription: "اكتشف تجربة طيران الإمارات المحسنة مع الراحة الفاخرة والخدمات الفاخرة التي تتجاوز التوقعات."
       },
     },
   },
@@ -195,6 +211,14 @@ const dictionaries = {
         chauffeurDrive: "Chauffeur‑drive",
         flightStatus: "Statut du vol",
       },
+      targeted: {
+        newToEmirates: "Nouveau chez Emirates — Obtenez l'offre",
+        welcomeMessage: "Bienvenue chez Emirates. Débloquez une offre d'introduction spéciale et commencez votre voyage premium aujourd'hui.",
+        getOffer: "Obtenir l'offre",
+        explorePremium: "Explorer Premium - Nouveau",
+        experienceB: "Expérience B - Premium",
+        premiumDescription: "Découvrez notre expérience Emirates améliorée avec un confort premium et des services de luxe qui dépassent les attentes."
+      },
     },
   },
   es: {
@@ -259,6 +283,14 @@ const dictionaries = {
         manageBooking: "Gestionar tu reserva",
         chauffeurDrive: "Chauffeur‑drive",
         flightStatus: "Estado del vuelo",
+      },
+      targeted: {
+        newToEmirates: "Nuevo en Emirates — Obtén la oferta",
+        welcomeMessage: "Bienvenido a Emirates. Desbloquea una oferta de introducción especial y comienza tu viaje premium hoy.",
+        getOffer: "Obtener oferta",
+        explorePremium: "Explorar Premium - Nuevo",
+        experienceB: "Experiencia B - Premium",
+        premiumDescription: "Descubre nuestra experiencia Emirates mejorada con comodidad premium y servicios de lujo que superan las expectativas."
       },
     },
   },
