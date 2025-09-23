@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getLangCode, subscribeLangCode } from "../utils";
-import { useI18n } from "../utils/i18n";
+import { t } from "../utils/i18n";
 import "./AdobeTargetOffer.scss";
 
 /**
@@ -9,7 +9,6 @@ import "./AdobeTargetOffer.scss";
  */
 const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
     const [lang, setLang] = useState(getLangCode());
-    const { t } = useI18n(); // Get translation function
 
     // Re-fetch when language changes (SPA locale switch)
     useEffect(() => {
@@ -78,6 +77,8 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
 
     // Function to translate targeted content
     const translateTargetedContent = (element) => {
+        console.log('Translating targeted content, current lang:', lang);
+        
         // Define translation mappings for common A/B test content
         const translations = {
             'New to Emirates — Get Offer': t('targeted.newToEmirates'),
@@ -85,8 +86,17 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
             'Get Offer': t('targeted.getOffer'),
             'Explore Premium - New': t('targeted.explorePremium'),
             'Experience B - Premium': t('targeted.experienceB'),
-            'Discover our enhanced Emirates experience with premium comfort and luxury services that exceed expectations.': t('targeted.premiumDescription')
+            'Discover our enhanced Emirates experience with premium comfort and luxury services that exceed expectations.': t('targeted.premiumDescription'),
+            // Also handle translation keys that might be coming from Target
+            'targeted.newToEmirates': t('targeted.newToEmirates'),
+            'targeted.welcomeMessage': t('targeted.welcomeMessage'),
+            'targeted.getOffer': t('targeted.getOffer'),
+            'targeted.explorePremium': t('targeted.explorePremium'),
+            'targeted.experienceB': t('targeted.experienceB'),
+            'targeted.premiumDescription': t('targeted.premiumDescription')
         };
+
+        console.log('Translation mappings:', translations);
 
         // Find and replace text content
         const walker = document.createTreeWalker(
@@ -100,6 +110,7 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
         while (node = walker.nextNode()) {
             const text = node.textContent.trim();
             if (translations[text]) {
+                console.log(`Translating "${text}" to "${translations[text]}"`);
                 node.textContent = translations[text];
             }
         }
