@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { getLangCode } from "../utils";
 import "./AdobeTargetOffer.scss";
 
 /**
@@ -23,6 +24,7 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
                 // Use Adobe Target's native getOffer method for A/B tests
                 window.adobe.target.getOffer({
                     mbox: mboxName,
+                    params: { lang: getLangCode() }, // Include language parameter like other components
                     success: function(offer) {
                         console.log("Adobe Target A/B test offer received:", offer);
                         
