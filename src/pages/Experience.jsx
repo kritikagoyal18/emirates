@@ -50,8 +50,8 @@ const Experience = () => {
         </div>
       </ContentFragment>
       
-      {/* MVT Test Area - Multivariate Testing */}
-      <MVTHero mboxName="emirates-hero-mvt" />
+      {/* MVT Test Area - Multivariate Testing (disabled) */}
+      {false && <MVTHero mboxName="emirates-hero-mvt" />}
       
       {/* Adobe Target A/B Test Area - Managed from Adobe Target Interface */}
       <AdobeTargetOffer mboxName="emirates-experience-ab-test" />
