@@ -56,7 +56,7 @@ const Experience = () => {
       {/* Adobe Target A/B Test Area - Managed from Adobe Target Interface */}
       <AdobeTargetOffer mboxName="emirates-experience-ab-test" />
       
-      {/* MVT Cabin Details Test Area */}
+      {/* MVT Cabin Details Test Area updated */}
       <MVTCabinDetails mboxName="emirates-cabin-mvt" items={cabinDetails || []} />
       
       {/* VEC-targetable cabin details for visual editing */}
