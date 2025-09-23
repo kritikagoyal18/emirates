@@ -75,30 +75,9 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
  
     }, [mboxName, lang]); // Re-run if mboxName or language changes
 
-    // Function to translate targeted content
+    // Function to translate targeted content - simple approach like other components
     const translateTargetedContent = (element) => {
-        console.log('Translating targeted content, current lang:', lang);
-        
-        // Define translation mappings for common A/B test content
-        const translations = {
-            'New to Emirates — Get Offer': t('targeted.newToEmirates'),
-            'Welcome to Emirates. Unlock a special introductory offer and start your premium journey today.': t('targeted.welcomeMessage'),
-            'Get Offer': t('targeted.getOffer'),
-            'Explore Premium - New': t('targeted.explorePremium'),
-            'Experience B - Premium': t('targeted.experienceB'),
-            'Discover our enhanced Emirates experience with premium comfort and luxury services that exceed expectations.': t('targeted.premiumDescription'),
-            // Also handle translation keys that might be coming from Target
-            'targeted.newToEmirates': t('targeted.newToEmirates'),
-            'targeted.welcomeMessage': t('targeted.welcomeMessage'),
-            'targeted.getOffer': t('targeted.getOffer'),
-            'targeted.explorePremium': t('targeted.explorePremium'),
-            'targeted.experienceB': t('targeted.experienceB'),
-            'targeted.premiumDescription': t('targeted.premiumDescription')
-        };
-
-        console.log('Translation mappings:', translations);
-
-        // Find and replace text content
+        // Just replace the text nodes with translated versions
         const walker = document.createTreeWalker(
             element,
             NodeFilter.SHOW_TEXT,
@@ -109,9 +88,34 @@ const AdobeTargetOffer = ({ mboxName = "emirates-ab-test" }) => {
         let node;
         while (node = walker.nextNode()) {
             const text = node.textContent.trim();
-            if (translations[text]) {
-                console.log(`Translating "${text}" to "${translations[text]}"`);
-                node.textContent = translations[text];
+            
+            // Replace common targeted content with translations
+            if (text === 'New to Emirates — Get Offer') {
+                node.textContent = t('targeted.newToEmirates');
+            } else if (text === 'Welcome to Emirates. Unlock a special introductory offer and start your premium journey today.') {
+                node.textContent = t('targeted.welcomeMessage');
+            } else if (text === 'Get Offer') {
+                node.textContent = t('targeted.getOffer');
+            } else if (text === 'Explore Premium - New') {
+                node.textContent = t('targeted.explorePremium');
+            } else if (text === 'Experience B - Premium') {
+                node.textContent = t('targeted.experienceB');
+            } else if (text === 'Discover our enhanced Emirates experience with premium comfort and luxury services that exceed expectations.') {
+                node.textContent = t('targeted.premiumDescription');
+            }
+            // Handle translation keys that might be coming from Target
+            else if (text === 'targeted.newToEmirates') {
+                node.textContent = t('targeted.newToEmirates');
+            } else if (text === 'targeted.welcomeMessage') {
+                node.textContent = t('targeted.welcomeMessage');
+            } else if (text === 'targeted.getOffer') {
+                node.textContent = t('targeted.getOffer');
+            } else if (text === 'targeted.explorePremium') {
+                node.textContent = t('targeted.explorePremium');
+            } else if (text === 'targeted.experienceB') {
+                node.textContent = t('targeted.experienceB');
+            } else if (text === 'targeted.premiumDescription') {
+                node.textContent = t('targeted.premiumDescription');
             }
         }
     };
