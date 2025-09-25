@@ -54,3 +54,34 @@
   }
   
 }
+div#emirates-experience-ab-test {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+div#emirates-experience-ab-test h2 {
+  max-width: 400px;
+  color: #fdfdfd;
+    font-family: 'Mylius Modern', sans-serif;
+    padding-bottom: 10px;
+}
+div#emirates-experience-ab-test p {
+  max-width: 400px;
+  padding-bottom: 10px;
+  color: #fdfdfd;
+  padding-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+div#emirates-experience-ab-test > div
+ {
+    padding: 40px 65px!important;
+}
+div#emirates-experience-ab-test button {
+  background: red;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
