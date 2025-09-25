@@ -2,6 +2,8 @@ import React, { useState, useEffect, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import ContentFragment from "../components/base/ContentFragment";
 import Hero from "../components/Hero";
+import MVTHero from "../components/MVTHero";
+import MVTCabinDetails from "../components/MVTCabinDetails";
 import AdobeTargetOffer from "../components/AdobeTargetOffer";
 
 import { useEmiratesExperienceBanner, useCabinDetails } from "../api";
@@ -29,16 +31,44 @@ const Experience = () => {
   const buttonLink = data?.buttonLink;
   const image = data?.image?._publishUrl || data?.image?._authorUrl;
 
+  // Announce SPA view to Adobe Target VEC so visual edits apply on this page
+  useEffect(() => {
+    try {
+      if (window && window.adobe && window.adobe.target && typeof window.adobe.target.triggerView === "function") {
+        window.adobe.target.triggerView("experience-page");
+      }
+    } catch (e) {
+      // no-op: Target not ready
+    }
+  }, []);
+
   return (
     <>
       <ContentFragment cf={data} label="Hero">
-        <Hero className="experience-hero" image={image} title={title} pretitle={pretitle} description={description} {...(buttonLabel ? { buttonLabel } : {})} {...(buttonLink ? { buttonLink } : {})} />
+        <div className="experience-hero-section" data-at-element="hero-section" suppressHydrationWarning>
+          <Hero className="experience-hero vec-targetable" image={image} title={title} pretitle={pretitle} description={description} {...(buttonLabel ? { buttonLabel } : {})} {...(buttonLink ? { buttonLink } : {})} />
+        </div>
       </ContentFragment>
+      
+      {/* MVT Test Area - Multivariate Testing (disabled) */}
+      {false && <MVTHero mboxName="emirates-hero-mvt" />}
       
       {/* Adobe Target A/B Test Area - Managed from Adobe Target Interface */}
       <AdobeTargetOffer mboxName="emirates-experience-ab-test" />
       
-      <CabinDetails items={cabinDetails || []} />
+      {/* MVT Cabin Details Test Area updated */}
+      <MVTCabinDetails mboxName="emirates-cabin-mvt" items={cabinDetails || []} />
+      
+      {/* VEC-targetable cabin details for visual editing (disabled to avoid duplicate rendering) */}
+      {false && (
+        <div 
+          className="cabin-details-section vec-targetable"
+          data-at-element="cabin-details"
+          suppressHydrationWarning
+        >
+          <CabinDetails items={cabinDetails || []} />
+        </div>
+      )}
     </>
   );
 };
