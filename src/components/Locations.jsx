@@ -18,7 +18,7 @@ const Locations = ({ items = [] }) => {
           <div key={cf?._path || index} className="location-row">
             <ContentFragment cf={cf} className="location-inner" behavior="component" label="Location">
               {cf?.image && (
-                <Image src={cf?.image?._path} prop="image" label="Image" className="location-card__image" />
+                <Image src={cf?.image?._publishUrl || cf?.image?._authorUrl || cf?.image?._path} prop="image" label="Image" className="location-card__image" />
               )}
               <div className="location-card__panel">
                 {cf?.pretitle && (

@@ -15,7 +15,7 @@ const CabinDetails = ({ items = [] }) => {
         <div key={cf?._path} className={`cabin-row ${index % 2 === 1 ? "even" : "odd"}`}>
           <ContentFragment cf={cf} className="cabin-inner" behavior="component" label={cf?.title || "Cabin Feature"}>
             {cf?.image && (
-              <Image src={cf?.image?._path} prop="image" label="Image" className="cabin-card__image" />
+              <Image src={cf?.image?._publishUrl || cf?.image?._authorUrl || cf?.image?._path} prop="image" label="Image" className="cabin-card__image" />
             )}
             <div className="cabin-card__panel">
               <Title heading="h3" prop="title" label="Title" className="cabin-card__title">
@@ -34,5 +34,3 @@ const CabinDetails = ({ items = [] }) => {
 };
 
 export default CabinDetails;
-
-

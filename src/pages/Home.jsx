@@ -46,10 +46,10 @@ const Home = () => {
         </div>
         <FlightBookingForm />
       </ContentFragment>
-      <img src="https://author-p135360-e1341441.adobeaemcloud.com/content/dam/emirates-flybetter/images/image3.png" alt="centre-image"  style={{ height: 'auto', width: '100%' }}/>
+      <img src="https://publish-p135360-e1341441.adobeaemcloud.com/content/dam/emirates-flybetter/images/image3.png" alt="centre-image"  style={{ height: 'auto', width: '100%' }}/>
       <Locations items={locations || []} />
-      <img src="https://author-p135360-e1341441.adobeaemcloud.com/content/dam/emirates-flybetter/images/image1.png" alt="centre-image"  style={{ height: 'auto', width: '100%' }}/>
-      <img src="https://author-p135360-e1341441.adobeaemcloud.com/content/dam/emirates-flybetter/images/image2.png" alt="centre-image"  style={{ height: 'auto', width: '100%' }}/>
+      <img src="https://publish-p135360-e1341441.adobeaemcloud.com/content/dam/emirates-flybetter/images/image1.png" alt="centre-image"  style={{ height: 'auto', width: '100%' }}/>
+      <img src="https://publish-p135360-e1341441.adobeaemcloud.com/content/dam/emirates-flybetter/images/image2.png" alt="centre-image"  style={{ height: 'auto', width: '100%' }}/>
     </>
   );
 };
