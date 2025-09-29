@@ -14,13 +14,9 @@ const CabinDetails = ({ items = [] }) => {
       {items.map((cf, index) => (
         <div key={cf?._path} className={`cabin-row ${index % 2 === 1 ? "even" : "odd"}`}>
           <ContentFragment cf={cf} className="cabin-inner" behavior="component" label={cf?.title || "Cabin Feature"}>
-            {cf?.image && (() => {
-              const img = cf.image;
-              const src = img?._publishUrl || (img?._authorUrl && img._authorUrl.replace("author-", "publish-")) || img?._path;
-              return (
-                <Image src={src} prop="image" label="Image" className="cabin-card__image" />
-              );
-            })()}
+            {cf?.image?._publishUrl && (
+              <Image src={cf.image._publishUrl} prop="image" label="Image" className="cabin-card__image" />
+            )}
             <div className="cabin-card__panel">
               <Title heading="h3" prop="title" label="Title" className="cabin-card__title">
                 {cf?.title}
