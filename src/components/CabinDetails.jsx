@@ -9,6 +9,7 @@ import "./CabinDetails.scss";
 const CabinDetails = ({ items = [] }) => {
   if (!items || !items.length) return null;
 
+  console.log("CabinDetails cf.image:", items[0]?.image);
   return (
     <div className="cabin-details container">
       {items.map((cf, index) => (
