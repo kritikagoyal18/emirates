@@ -24,7 +24,7 @@ function App() {
           />
           <meta
             name="urn:adobe:aue:system:aemconnection"
-            content={`aem:${getURI()}`}
+            content={"aem:https://author-p135360-e1341441.adobeaemcloud.com"}
           />
         </Helmet>
         <Header />
